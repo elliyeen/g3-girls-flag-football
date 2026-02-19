@@ -1,0 +1,115 @@
+# Executive Brief — Project Launch Summary
+## Girls Flag Football — AZ Launch & Nike Partnership
+**To:** Program Founder
+**Date:** 2026-02-19 | **Prepared by:** TPM Agent
+
+---
+
+## Status — 🟢 INITIATING
+
+Project launched today. Zero infrastructure in place. Phase 1 actions must begin this week.
+
+---
+
+## The Opportunity in One Paragraph
+
+Girls' flag football is the fastest-growing youth sport in America. The NFL is investing heavily. Title IX is driving school districts to offer more girls' sports. Nike is actively looking for girls-in-sport stories that align with their brand. Arizona has no dominant girls-first flag football brand. This is a wide-open market with a clear path to a Nike partnership and national scale — if the organization is built correctly from Day 1.
+
+---
+
+## The Plan — 5 Phases, 18 Months
+
+| Phase | Dates | Goal |
+|---|---|---|
+| 1 — Foundation | Feb–Apr 2026 | Legal entity, brand, website, governing body affiliation |
+| 2 — AZ Launch | May–Sep 2026 | 100+ registered girls, Season 1 complete |
+| 3 — Nike Pursuit | Jun–Nov 2026 | Nike deal signed by November 2026 |
+| 4 — Traction | Sep–Dec 2026 | 250 AZ girls, Season 1 impact report |
+| 5 — National | Jan–Jun 2027 | Texas launch, 1,000 total girls |
+
+---
+
+## Your Three Actions This Week
+
+**Action 1 — Legal:** Engage a sports/nonprofit attorney to file 501(c)(3) status.
+> 501(c)(3) is required for: grant eligibility, Nike Community Impact Fund, parent donation deductions.
+> Do not form an LLC instead — it forecloses the grant pathway.
+> Deadline: March 7.
+
+**Action 2 — Brand Designer:** Issue a design brief to at least 3 brand designers.
+> Budget: $3,000–$6,000 for logo + brand guide.
+> Timeline: Logo needed by March 21.
+> Critical: No website, no social launch, no Nike pitch until brand is locked.
+
+**Action 3 — USA Flag Football:** Begin affiliation application research.
+> Go to: usaflagfootball.com — identify chapter/affiliate application process.
+> This is your credibility unlock: governing body affiliation makes you a "real" league to Nike, school districts, and sponsors.
+> Deadline: April 14.
+
+---
+
+## RAG by Area
+
+| Area | Status | Note |
+|---|---|---|
+| Legal / Entity | 🔴 NOT STARTED | 501(c)(3) filing must begin this week |
+| Brand | 🔴 NOT STARTED | Designer brief needed by Feb 28 |
+| Website | 🔴 NOT STARTED | Blocked on brand; target live date Apr 7 |
+| Governing Body | 🔴 NOT STARTED | USA Flag Football inquiry needed |
+| Funding | 🟡 WATCH | No sponsors secured; grant research needed |
+| Nike Pipeline | 🟡 PLANNING | Entry strategy defined; activation begins Phase 2 |
+| Players | 🔴 NOT STARTED | Registration opens Phase 2 |
+
+---
+
+## Realistic Nike Deal — Set Expectations
+
+| Scenario | Year 1 | Year 2 | Year 3 |
+|---|---|---|---|
+| Conservative | $25K product only | $50K product + $10K cash | $100K total |
+| Base case | $50K product + $25K cash | $100K product + $50K cash | $250K total |
+| Best case | $75K product + $50K cash | $250K deal | $500K national deal |
+
+The Nike deal **will not happen until traction is proven.** Best estimated close date is November 2026 — but only if Phase 1 and Phase 2 execute on time.
+
+---
+
+## Budget — First 90 Days
+
+| Item | Amount |
+|---|---|
+| Legal (entity + trademark) | $3,000–$5,000 |
+| Brand design | $3,000–$6,000 |
+| Website | $2,000–$4,000 |
+| Tools / subscriptions (12 months) | $500–$1,000 |
+| Outreach / travel | $1,000–$2,000 |
+| **Total Phase 1** | **$9,500–$18,000** |
+
+---
+
+## Key Dates — Next 60 Days
+
+| Date | Milestone |
+|---|---|
+| **Feb 28** | Design brief issued, designer selected |
+| **Mar 7** | Attorney engaged, 501(c)(3) filing begun |
+| **Mar 21** | Logo and brand guide delivered |
+| **Apr 7** | Website MVP live |
+| **Apr 7** | Social media channels launched |
+| **Apr 14** | USA Flag Football affiliation application submitted |
+| **Apr 21** | AZ Cardinals outreach initiated |
+| **Apr 30** | Phase 1 complete — launch-ready |
+
+---
+
+## What This Project Needs to Succeed
+
+1. **The founder must be the face.** Nike and sponsors invest in founders, not organizations. Personal story, authentic passion, and visible leadership in content are non-negotiable.
+2. **Content from Day 1.** The first practice, the first drill, the first girl who shows up — document all of it. These early moments become the Nike pitch reel in 6 months.
+3. **Patience on the Nike timing.** The Nike deal is the prize of Year 1, not Day 1. It cannot be rushed. Attempting to approach Nike before traction is built will produce rejection and close the door.
+4. **Female coaching staff as a priority.** A girls-first organization led by male coaches only is a brand liability. Recruit and feature female coaches immediately.
+5. **School districts are the distribution channel.** One school district MOU = 200–500 potential players who walk through the gym every day. Prioritize these relationships above all other program partnerships.
+
+---
+
+*Generated by: TPM Agent — Girls Flag Football | tpm run girls_flag_football*
