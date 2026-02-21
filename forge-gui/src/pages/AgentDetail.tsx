@@ -76,9 +76,9 @@ export default function AgentDetail() {
   const [reportLoading,  setReportLoading]  = useState(false);
 
   const { data: detail, isLoading, refetch } = useQuery({
-    queryKey: ["agent", id, config?.data_dir],
-    queryFn:  () => api.getAgentDetail(id!, config!.data_dir),
-    enabled:  !!id && !!config?.data_dir,
+    queryKey: ["agent", id, config?.data_dir, config?.output_dir],
+    queryFn:  () => api.getAgentDetail(id!, config!.data_dir, config!.output_dir),
+    enabled:  !!id && !!config?.data_dir && !!config?.output_dir,
   });
 
   const canRun = account.role === "admin" || account.role === "manager";
@@ -88,8 +88,13 @@ export default function AgentDetail() {
     if (!config || !id) return;
     setRunning(true);
     setRunMsg("");
+    // Submitted projects (not in AGENT_META) use run-project; named agents use run
+    const isNamedAgent = id in AGENT_META;
+    const args = isNamedAgent
+      ? ["run", id.replace(/_/g, "-")]
+      : ["run-project", id];
     try {
-      const out = await api.runForge(config.forge_binary, ["run", id.replace(/_/g, "-")]);
+      const out = await api.runForge(config.forge_binary, args);
       setRunMsg(out.slice(0, 300));
       refetch();
     } catch (e: unknown) {
@@ -149,7 +154,8 @@ export default function AgentDetail() {
               <h1 className="text-title">{summary.name}</h1>
             </div>
             <p className="text-caption mt-1">
-              {meta?.role}  ·  {p.current_phase as string}  ·  {meta?.clearance}
+              {[meta?.role, p.current_phase as string, meta?.clearance]
+                .filter(Boolean).join("  ·  ")}
             </p>
             <p className="text-caption mt-0.5">{p.pm as string}</p>
           </div>

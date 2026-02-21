@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
-import { RefreshCw, Play, AlertTriangle } from "lucide-react";
+import { RefreshCw, Play, AlertTriangle, FolderPlus } from "lucide-react";
 import { api } from "@/lib/api";
 import { useAppStore } from "@/store";
 import { fmtPct, fmtUsd } from "@/lib/utils";
@@ -181,6 +181,15 @@ export default function Dashboard() {
             <RefreshCw size={13} className={isLoading ? "animate-spin" : ""} />
             Refresh
           </Button>
+          {canRun && (
+            <Button
+              variant="ghost" size="sm"
+              onClick={() => navigate("/submit")}
+            >
+              <FolderPlus size={13} />
+              New Project
+            </Button>
+          )}
           {canRun && (
             <Button
               variant="primary" size="sm"

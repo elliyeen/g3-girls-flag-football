@@ -2,6 +2,17 @@ export type AgentId =
   | "physical_security" | "crm" | "cloud_migration"
   | "erp" | "infrastructure" | "agile" | "risk";
 
+export interface ProjectBrief {
+  slug:            string;
+  name:            string;
+  description:     string;
+  sponsor:         string;
+  pm:              string;
+  start_date:      string;
+  target_end_date: string;
+  budget_total_usd: number;
+}
+
 export type ProjectStatus = "on_track" | "at_risk" | "off_track" | "on_hold" | "completed";
 export type RiskStatus    = "open" | "mitigating" | "accepted" | "closed" | "escalated";
 export type MilestoneStatus = "not_started" | "in_progress" | "complete" | "overdue" | "blocked";
@@ -9,7 +20,7 @@ export type MilestoneStatus = "not_started" | "in_progress" | "complete" | "over
 export interface ProjectSummary {
   id:                 string;
   name:               string;
-  agent_id:           AgentId;
+  agent_id:           string;
   status:             ProjectStatus;
   phase:              string;
   pm:                 string;
@@ -94,7 +105,7 @@ export interface UserAccount {
   avatar_initials: string;
 }
 
-export const AGENT_META: Record<AgentId, { label: string; role: string; clearance: string }> = {
+export const AGENT_META: Record<string, { label: string; role: string; clearance: string }> = {
   physical_security: { label: "Physical Security", role: "Guardian",   clearance: "FedRAMP High" },
   crm:               { label: "CRM",                role: "Communicator", clearance: "FedRAMP Moderate" },
   cloud_migration:   { label: "Cloud Migration",    role: "Navigator",  clearance: "FedRAMP High" },

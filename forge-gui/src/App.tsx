@@ -11,6 +11,7 @@ import Reports        from "@/pages/Reports";
 import Ask            from "@/pages/Ask";
 import Settings       from "@/pages/Settings";
 import Account        from "@/pages/Account";
+import Submit         from "@/pages/Submit";
 
 const qc = new QueryClient({
   defaultOptions: { queries: { retry: 1, staleTime: 30_000 } },
@@ -39,6 +40,7 @@ export default function App() {
             <Route path="ask"        element={<Ask />} />
             <Route path="settings"   element={<Settings />} />
             <Route path="account"    element={<Account />} />
+            <Route path="submit"     element={<Submit />} />
             <Route path="*"          element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

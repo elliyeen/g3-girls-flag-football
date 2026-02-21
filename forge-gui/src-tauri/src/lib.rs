@@ -177,9 +177,26 @@ impl Default for AppConfig {
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
-fn agent_ids() -> Vec<&'static str> {
-    vec!["physical_security", "crm", "cloud_migration", "erp",
-         "infrastructure", "agile", "risk"]
+/// Scan `data_dir` for every subdirectory that contains a `project.toml`.
+/// Returns folder names sorted alphabetically.  Returns an empty list when
+/// the directory cannot be read (e.g. not yet configured).
+fn scan_data_dir(data_dir: &str) -> Vec<String> {
+    let base = std::path::Path::new(data_dir);
+    match std::fs::read_dir(base) {
+        Err(_) => vec![],
+        Ok(entries) => {
+            let mut ids: Vec<String> = entries
+                .flatten()
+                .filter(|e| {
+                    e.file_type().map(|t| t.is_dir()).unwrap_or(false)
+                        && e.path().join("project.toml").exists()
+                })
+                .map(|e| e.file_name().to_string_lossy().to_string())
+                .collect();
+            ids.sort();
+            ids
+        }
+    }
 }
 
 fn risk_score(probability: &str, impact: &str) -> u8 {
@@ -317,26 +334,24 @@ mod commands {
     #[tauri::command]
     pub fn get_portfolio(data_dir: String) -> Result<Vec<ProjectSummary>, String> {
         let mut summaries = Vec::new();
-        for id in agent_ids() {
-            if let Ok(project) = load_project(&data_dir, id) {
-                let risks = load_risks(&data_dir, id);
-                summaries.push(project_to_summary(id, &project, &risks));
+        for id in scan_data_dir(&data_dir) {
+            if let Ok(project) = load_project(&data_dir, &id) {
+                let risks = load_risks(&data_dir, &id);
+                summaries.push(project_to_summary(&id, &project, &risks));
             }
         }
         Ok(summaries)
     }
 
     #[tauri::command]
-    pub fn get_agent_detail(agent_id: String, data_dir: String) -> Result<AgentDetail, String> {
+    pub fn get_agent_detail(agent_id: String, data_dir: String, output_dir: String) -> Result<AgentDetail, String> {
         let project = load_project(&data_dir, &agent_id).map_err(|e| e.to_string())?;
         let risks   = load_risks(&data_dir, &agent_id);
         let vendors = load_vendors(&data_dir, &agent_id);
         let summary = project_to_summary(&agent_id, &project, &risks);
 
-        let out_base = PathBuf::from(data_dir.trim_end_matches('/'))
-            .parent().unwrap_or_else(|| std::path::Path::new("."))
-            .join("outputs");
-        let reports = collect_reports(&out_base.join(&agent_id), &agent_id);
+        // Use the project's own id field (matches the folder forge writes to)
+        let reports = collect_reports(&PathBuf::from(&output_dir).join(&project.id), &agent_id);
 
         Ok(AgentDetail {
             summary,
@@ -355,11 +370,108 @@ mod commands {
     pub fn get_all_reports(output_dir: String) -> Result<Vec<ReportFile>, String> {
         let base = PathBuf::from(&output_dir);
         let mut all = Vec::new();
-        for id in agent_ids() {
-            all.extend(collect_reports(&base.join(id), id));
+        // Scan the output_dir directly for subdirectories (same pattern as data_dir scan)
+        if let Ok(entries) = std::fs::read_dir(&base) {
+            for entry in entries.flatten() {
+                if entry.file_type().map(|t| t.is_dir()).unwrap_or(false) {
+                    let id = entry.file_name().to_string_lossy().to_string();
+                    all.extend(collect_reports(&entry.path(), &id));
+                }
+            }
         }
         all.sort_by(|a, b| b.filename.cmp(&a.filename));
         Ok(all)
+    }
+
+    #[tauri::command]
+    pub fn scan_projects(data_dir: String) -> Result<Vec<String>, String> {
+        Ok(scan_data_dir(&data_dir))
+    }
+
+    #[tauri::command]
+    pub fn write_project_brief(
+        data_dir:         String,
+        slug:             String,
+        name:             String,
+        description:      String,
+        sponsor:          String,
+        pm:               String,
+        start_date:       String,
+        target_end_date:  String,
+        budget_total_usd: u64,
+    ) -> Result<String, String> {
+        // Sanitize slug: lowercase, alphanumeric + underscores only
+        let safe_slug: String = slug
+            .to_lowercase()
+            .chars()
+            .map(|c| if c.is_alphanumeric() || c == '_' { c } else { '_' })
+            .collect::<String>()
+            .split('_')
+            .filter(|s| !s.is_empty())
+            .collect::<Vec<_>>()
+            .join("_");
+
+        if safe_slug.is_empty() {
+            return Err("Project slug cannot be empty".to_string());
+        }
+
+        let dir = PathBuf::from(&data_dir).join(&safe_slug);
+        std::fs::create_dir_all(&dir).map_err(|e| e.to_string())?;
+
+        let today = {
+            use std::time::{SystemTime, UNIX_EPOCH};
+            let s = SystemTime::now().duration_since(UNIX_EPOCH).unwrap_or_default().as_secs();
+            let d = (s / 86400) as i64;
+            let (mut rem, mut y) = (d, 1970i32);
+            loop {
+                let yd = if (y % 4 == 0 && y % 100 != 0) || y % 400 == 0 { 366 } else { 365 };
+                if rem < yd { break; }
+                rem -= yd;
+                y += 1;
+            }
+            let leap = (y % 4 == 0 && y % 100 != 0) || y % 400 == 0;
+            let mdays = [31i64, if leap { 29 } else { 28 }, 31,30,31,30,31,31,30,31,30,31];
+            let mut mo = 1u32;
+            for &md in &mdays { if rem < md { break; } rem -= md; mo += 1; }
+            format!("{:04}-{:02}-{:02}", y, mo, rem + 1)
+        };
+
+        let effective_start = if start_date.is_empty() { today.clone() } else { start_date.clone() };
+        let effective_end   = if target_end_date.is_empty() { today.clone() } else { target_end_date.clone() };
+
+        let toml = format!(
+            r#"id              = {id:?}
+name            = {name:?}
+description     = {desc:?}
+sponsor         = {sponsor:?}
+pm              = {pm:?}
+start_date      = {start:?}
+target_end_date = {end:?}
+current_phase   = "Planning"
+overall_status  = "on_track"
+budget_total_usd = {budget}
+budget_spent_usd = 0
+
+[compliance]
+controls_total       = 0
+controls_implemented = 0
+open_findings        = 0
+required_level       = 0
+"#,
+            id      = safe_slug,
+            name    = name,
+            desc    = description,
+            sponsor = sponsor,
+            pm      = pm,
+            start   = effective_start,
+            end     = effective_end,
+            budget  = budget_total_usd,
+        );
+
+        let toml_path = dir.join("project.toml");
+        std::fs::write(&toml_path, toml).map_err(|e| e.to_string())?;
+
+        Ok(safe_slug)
     }
 
     #[tauri::command]
@@ -418,6 +530,8 @@ pub fn run() {
             commands::run_forge,
             commands::get_app_config,
             commands::save_app_config,
+            commands::scan_projects,
+            commands::write_project_brief,
         ])
         .run(tauri::generate_context!())
         .expect("error while running Seal");

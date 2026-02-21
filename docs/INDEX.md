@@ -17,6 +17,7 @@ All documentation for the TPM Agent System. Organized by section.
 
 | Section | Description | Index |
 |---|---|---|
+| **acquisition/** | Ramadan 2026 acquisition sprint — 30-day plan, backlog, pitch narrative | [acquisition/](acquisition/) |
 | **agents/** | Individual agent profiles — skills, memory, abilities, security clearance | [agents/](agents/) |
 | **architecture/** | System architecture — data model, security model, threat defense, coordination | [architecture/](architecture/) |
 | **memory/** | Memory architecture — how agents store and recall state | [memory/](memory/) |
@@ -29,6 +30,8 @@ All documentation for the TPM Agent System. Organized by section.
 
 | What you need | Where it is |
 |---|---|
+| **30-day acquisition sprint plan** | [acquisition/30-day-ramadan-sprint.md](acquisition/30-day-ramadan-sprint.md) |
+| **Acquisition task backlog** | [acquisition/backlog.md](acquisition/backlog.md) |
 | Category taxonomy (0–8) | [system/categories/INDEX.md](system/categories/INDEX.md) |
 | Agent profiles | [agents/](agents/) |
 | Security model | [architecture/02-security-model.md](architecture/02-security-model.md) |

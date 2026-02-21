@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import {
   LayoutGrid, Activity, FileText, MessageSquare,
-  Settings, ChevronRight, Shield,
+  Settings, ChevronRight, Shield, FolderPlus,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAppStore } from "@/store";
@@ -11,6 +11,7 @@ import { ROLE_META } from "@/lib/types";
 const NAV = [
   { to: "/",        icon: LayoutGrid,   label: "Overview"  },
   { to: "/agents",  icon: Activity,     label: "Agents"    },
+  { to: "/submit",  icon: FolderPlus,   label: "New Project" },
   { to: "/reports", icon: FileText,     label: "Reports"   },
   { to: "/ask",     icon: MessageSquare,label: "Ask Seal"  },
 ];
