@@ -23,6 +23,4 @@ export const api = {
   saveAppConfig:   (config: AppConfig) =>
     invoke<void>("save_app_config", { config }),
 
-  readSettingsToml: (configPath: string) =>
-    invoke<string>("read_settings_toml", { configPath }),
 };

@@ -302,7 +302,7 @@ fn collect_reports(dir: &PathBuf, agent_id: &str) -> Vec<ReportFile> {
 fn config_path() -> PathBuf {
     dirs::config_dir()
         .unwrap_or_else(|| PathBuf::from("."))
-        .join("forge-gui")
+        .join("seal")
         .join("config.json")
 }
 
@@ -372,7 +372,7 @@ mod commands {
         let out = Command::new(&binary_path)
             .args(&args)
             .output()
-            .map_err(|e| format!("Failed to launch forge: {e}"))?;
+            .map_err(|e| format!("Failed to launch Seal binary: {e}"))?;
         let combined = format!(
             "{}{}",
             String::from_utf8_lossy(&out.stdout),
@@ -402,10 +402,6 @@ mod commands {
         std::fs::write(&path, raw).map_err(|e| e.to_string())
     }
 
-    #[tauri::command]
-    pub fn read_settings_toml(config_path: String) -> Result<String, String> {
-        std::fs::read_to_string(&config_path).map_err(|e| e.to_string())
-    }
 }
 
 // ── Entry point ───────────────────────────────────────────────────────────────
@@ -422,8 +418,7 @@ pub fn run() {
             commands::run_forge,
             commands::get_app_config,
             commands::save_app_config,
-            commands::read_settings_toml,
         ])
         .run(tauri::generate_context!())
-        .expect("error while running Forge");
+        .expect("error while running Seal");
 }

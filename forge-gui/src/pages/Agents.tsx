@@ -22,7 +22,7 @@ export default function Agents() {
     <div className="px-6 py-5 space-y-4 max-w-[900px]">
       <div>
         <h1 className="text-title">Agents</h1>
-        <p className="text-caption mt-0.5">Seven specialized project management agents</p>
+        <p className="text-caption mt-0.5">{projects.length} project management agent{projects.length !== 1 ? "s" : ""}</p>
       </div>
 
       {isLoading ? (
