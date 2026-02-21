@@ -1,12 +1,12 @@
 [package]
-name = "forge-gui"
+name = "seal"
 version = "0.1.0"
-description = "Forge — Project Management Agents"
+description = "Seal — Project Management Agents"
 authors = ["you"]
 edition = "2021"
 
 [lib]
-name = "forge_gui_lib"
+name = "seal_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
