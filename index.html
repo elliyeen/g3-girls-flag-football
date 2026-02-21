@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>G3 Girls Flag Football — Gridiron Griots Girls</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --red:   #D62828;
+      --gold:  #F7B731;
+    }
+
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--black); background: var(--white); }
+
+        /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--black);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 64px;
+    }
+    .nav-logo { color: var(--white); font-size: 18px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--red); color: var(--white);
+      padding: 10px 22px; border-radius: 8px;
+      font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      text-decoration: none; transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--red); opacity: .85; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex; align-items: center;
+      overflow: hidden;
+      padding: 0 8%;
+    }
+    .hero-photo {
+      position: absolute; inset: 0;
+      background-image: url('g3-hero-01.jpg');
+      background-size: cover;
+      background-position: center center;
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.88) 0%,
+        rgba(0,0,0,0.65) 55%,
+        rgba(0,0,0,0.22) 100%
+      );
+      z-index: 1;
+    }
+    .hero-overlay::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+      background: var(--red);
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 680px; padding: 120px 0 100px; }
+    .hero-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+    .hero-eyebrow-line { width: 32px; height: 2px; background: var(--red); }
+    .hero-eyebrow-text { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.65); }
+    .hero h1 {
+      font-size: clamp(48px, 6.5vw, 88px);
+      font-weight: 900; line-height: 0.95;
+      color: var(--white); text-transform: uppercase;
+      letter-spacing: -2px; margin-bottom: 28px;
+    }
+    .hero h1 em { color: var(--red); font-style: normal; display: block; }
+    .hero-sub { font-size: 17px; color: rgba(255,255,255,0.70); line-height: 1.75; max-width: 480px; margin-bottom: 44px; }
+    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .btn-primary, .btn-secondary {
+      padding: 16px 0; width: 280px; text-align: center;
+      border-radius: 10px; font-size: 12px; font-weight: 800;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      text-decoration: none; display: inline-block;
+      white-space: nowrap;
+      transition: opacity .2s, transform .15s, border-color .2s, color .2s;
+    }
+    .btn-primary { background: var(--red); color: var(--white); border: 1.5px solid var(--red); }
+    .btn-primary:hover { opacity: .85; transform: translateY(-2px); }
+    .btn-secondary { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.35); }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-credential {
+      margin-top: 52px; padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      display: flex; align-items: center; gap: 20px;
+    }
+    .hero-credential-badge {
+      background: var(--gold); color: var(--black);
+      font-size: 9px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 10px; border-radius: 6px; white-space: nowrap;
+    }
+    .hero-credential-text { font-size: 13px; color: rgba(255,255,255,0.50); line-height: 1.5; }
+    .hero-credential-text strong { color: var(--white); font-weight: 700; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--gold);
+      display: flex; justify-content: center; gap: 64px;
+      padding: 28px 48px; flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 32px; font-weight: 900; color: var(--black); line-height: 1; }
+    .stat-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.55); margin-top: 4px; }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 96px 48px; }
+    .section-label { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+    h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 20px; }
+    .section-sub { font-size: 17px; color: rgba(0,0,0,0.55); line-height: 1.7; max-width: 600px; margin-bottom: 48px; }
+
+    /* ── WHY SECTION ── */
+    .why { background: var(--black); text-align: center; }
+    .why .section-label { color: var(--gold); }
+    .why h2 { color: var(--white); }
+    .why .section-sub { color: rgba(255,255,255,0.55); margin-left: auto; margin-right: auto; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; }
+    .why-card {
+      background: var(--white);
+      padding: 36px 32px;
+      border-top: 4px solid var(--red);
+      border-radius: 16px;
+    }
+    .why-card h3 { font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; color: var(--black); }
+    .why-card p { font-size: 15px; color: rgba(0,0,0,0.60); line-height: 1.7; }
+
+    /* ── PROGRAMS ── */
+    .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .program-card {
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 16px; overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .program-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.10); }
+    .program-header { padding: 32px; display: flex; align-items: center; gap: 16px; }
+    .program-header.mini   { background: var(--gold); }
+    .program-header.junior { background: var(--red); }
+    .program-header.senior { background: var(--black); }
+    .program-age { font-size: 40px; font-weight: 900; color: var(--black); }
+    .program-header.junior .program-age { color: var(--white); }
+    .program-header.senior .program-age { color: var(--white); }
+    .program-name { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.55); }
+    .program-header.junior .program-name { color: rgba(255,255,255,0.7); }
+    .program-header.senior .program-name { color: rgba(255,255,255,0.5); }
+    .program-body { padding: 24px 32px 32px; background: var(--white); }
+    .program-title { font-size: 20px; font-weight: 800; margin: 8px 0 12px; text-transform: uppercase; color: var(--black); }
+    .program-body p { font-size: 14px; color: rgba(0,0,0,0.55); line-height: 1.6; margin-bottom: 20px; }
+    .program-link { color: var(--red); font-weight: 700; font-size: 13px; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; }
+    .program-link:hover { text-decoration: underline; }
+
+    /* ── CURRICULUM ── */
+    .curriculum { background: var(--black); text-align: center; }
+    .curriculum .section-label { color: var(--gold); }
+    .curriculum h2 { color: var(--white); }
+    .curriculum .section-sub { color: rgba(255,255,255,0.55); margin-left: auto; margin-right: auto; }
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+    }
+    .station-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .2s, background .2s;
+    }
+    .station-card:hover { border-color: var(--red); background: #161616; }
+    .station-letter {
+      font-size: 64px; font-weight: 900; line-height: 1;
+      color: rgba(255,255,255,0.06);
+      position: absolute; top: 16px; right: 20px;
+      letter-spacing: -2px;
+    }
+    .station-label {
+      font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+    }
+    .station-name {
+      font-size: 20px; font-weight: 900; text-transform: uppercase;
+      color: var(--white); margin-bottom: 12px; letter-spacing: 0.3px;
+    }
+    .station-desc { font-size: 14px; color: rgba(255,255,255,0.50); line-height: 1.7; }
+
+    /* ── COACH SECTION ── */
+    .coach { background: var(--black); color: var(--white); }
+    .coach .section-label { color: var(--gold); }
+    .coach-inner { display: grid; grid-template-columns: 340px 1fr; gap: 64px; align-items: center; }
+    .coach-card { background: var(--black); border: 1px solid rgba(255,255,255,0.10); border-radius: 16px; overflow: hidden; }
+    .coach-photo-placeholder {
+      position: relative;
+      border-bottom: 3px solid var(--red);
+      height: 360px; overflow: hidden;
+      display: flex; align-items: flex-end;
+      padding: 24px;
+    }
+    .coach-photo-placeholder img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+    }
+    .coach-tag {
+      background: var(--red); color: var(--white);
+      font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      padding: 6px 12px; display: inline-block;
+    }
+    .coach-info { padding: 28px; }
+    .coach-name { font-size: 22px; font-weight: 900; color: var(--white); text-transform: uppercase; letter-spacing: 0.5px; }
+    .coach-title { font-size: 12px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+    .coach-nfl { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+    .nfl-badge {
+      font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      padding: 4px 10px; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.5);
+      border-radius: 20px;
+    }
+    .coach-content h2 { color: var(--white); }
+    .coach-content p { color: rgba(255,255,255,0.55); font-size: 16px; line-height: 1.8; margin-bottom: 20px; max-width: 540px; }
+    .coach-content p strong { color: var(--white); }
+    .coach-quote {
+      border-left: 3px solid var(--gold); padding-left: 20px;
+      font-size: 18px; color: rgba(255,255,255,0.80); font-style: italic; line-height: 1.6;
+      margin: 32px 0;
+    }
+    .coach-link { color: var(--gold); font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; }
+    .coach-link:hover { text-decoration: underline; }
+
+    /* ── GALLERY ── */
+    .gallery { background: var(--black); padding: 96px 48px; text-align: center; }
+    .gallery .section-label { color: var(--gold); }
+    .gallery h2 { color: var(--white); margin-bottom: 12px; }
+    .gallery-sub { font-size: 17px; color: rgba(255,255,255,0.45); margin-bottom: 48px; }
+    .gallery-frame {
+      position: relative; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.60);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .gallery-frame img { width: 100%; display: block; }
+    .gallery-frame-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 24px 32px;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .gallery-frame-label span {
+      font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,0.60);
+    }
+    .gallery-frame-label strong { color: var(--gold); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+
+    /* ── MISSION DARK ── */
+    .mission-dark {
+      background: var(--black); color: var(--white);
+      text-align: center; padding: 120px 48px;
+    }
+    .mission-dark .section-label { color: var(--gold); }
+    .mission-dark h2 { color: var(--white); max-width: 800px; margin: 0 auto 24px; font-size: clamp(32px, 5vw, 56px); }
+    .mission-dark p { color: rgba(255,255,255,0.50); max-width: 640px; margin: 0 auto 48px; font-size: 18px; line-height: 1.7; }
+    .mission-dark p.continents-note {
+      font-size: 14px; color: rgba(255,255,255,0.35);
+      margin-top: -32px; margin-bottom: 48px;
+      letter-spacing: 0.5px;
+    }
+    .mission-dark p.continents-note strong { color: var(--gold); }
+    .mission-values { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-top: 56px; }
+    .value { text-align: center; }
+    .value-word { font-size: 16px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+    .value-line { width: 2px; height: 40px; background: var(--red); margin: 12px auto; }
+    .value-desc { font-size: 13px; color: rgba(255,255,255,0.40); letter-spacing: 1px; }
+
+    /* ── SCROLLING PARTNER BANNER ── */
+    .partner-banner {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 0; overflow: hidden;
+    }
+    .partner-banner-label {
+      text-align: center;
+      font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,0.30); padding: 18px 0 0;
+    }
+    .partner-track-wrap { overflow: hidden; position: relative; padding: 20px 0 24px; }
+    /* Fade edges */
+    .partner-track-wrap::before,
+    .partner-track-wrap::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2;
+    }
+    .partner-track-wrap::before { left: 0; background: linear-gradient(to right, var(--black), transparent); }
+    .partner-track-wrap::after  { right: 0; background: linear-gradient(to left,  var(--black), transparent); }
+    .partner-track {
+      display: flex; gap: 0; width: max-content;
+      animation: scroll-partners 28s linear infinite;
+    }
+    .partner-track:hover { animation-play-state: paused; }
+    @keyframes scroll-partners {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .partner-item {
+      display: flex; align-items: center; justify-content: center;
+      padding: 0 48px; height: 64px;
+      font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      border-right: 1px solid rgba(255,255,255,0.08);
+      white-space: nowrap;
+      transition: color .2s;
+    }
+    .partner-item:hover { color: var(--white); }
+    .partner-item.highlight { color: var(--gold); }
+
+    /* ── PARTNERS SECTION ── */
+    .partners { background: var(--white); text-align: center; }
+    .partners-sub { color: rgba(0,0,0,0.50); font-size: 16px; margin-bottom: 48px; }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2px; margin-bottom: 48px;
+    }
+    .partner-card {
+      background: var(--white);
+      border: 1.5px solid rgba(0,0,0,0.10);
+      border-radius: 16px;
+      padding: 32px 20px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+      transition: border-color .2s, background .2s;
+      cursor: default;
+    }
+    .partner-card:hover { border-color: var(--red); background: var(--black); }
+    .partner-card:hover .partner-card-name { color: var(--white); }
+    .partner-card:hover .partner-card-role { color: rgba(255,255,255,0.45); }
+    .partner-card.nike-card { background: var(--black); border-color: var(--black); }
+    .partner-card.nike-card .partner-card-name { color: var(--white); font-size: 22px; }
+    .partner-card.nike-card .partner-card-role { color: var(--gold); }
+    .partner-card-name {
+      font-size: 14px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--black); text-align: center;
+    }
+    .partner-card-role {
+      font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+      color: rgba(0,0,0,0.40); text-align: center;
+    }
+    .partner-card-status {
+      font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      background: var(--gold); color: var(--black);
+      padding: 3px 8px;
+    }
+    .partners-cta { margin-top: 48px; }
+
+    /* ── SPONSOR TIERS ── */
+    .sponsor-tiers { background: var(--white); }
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .tier-card {
+      padding: 36px 32px;
+      border: 2px solid rgba(0,0,0,0.10);
+      border-radius: 20px;
+      text-align: center;
+      display: flex; flex-direction: column;
+      transition: border-color .2s;
+    }
+    .tier-card:hover { border-color: var(--red); }
+    .tier-card.featured { background: var(--black); border-color: var(--gold); color: var(--white); }
+    .tier-name { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.45); margin-bottom: 8px; }
+    .tier-card.featured .tier-name { color: var(--gold); }
+    .tier-price { font-size: 28px; font-weight: 900; color: var(--black); margin-bottom: 16px; }
+    .tier-card.featured .tier-price { color: var(--gold); }
+    .tier-perks { list-style: none; text-align: left; margin-bottom: 24px; flex: 1; }
+    .tier-perks li { font-size: 13px; color: rgba(0,0,0,0.60); padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .tier-card.featured .tier-perks li { color: rgba(255,255,255,0.65); border-bottom-color: rgba(255,255,255,0.10); }
+    .tier-perks li::before { content: "— "; color: rgba(0,0,0,0.30); }
+    .tier-card.featured .tier-perks li::before { color: rgba(255,255,255,0.30); }
+    .tier-cta { color: var(--red); font-weight: 700; font-size: 13px; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; margin-top: auto; }
+    .tier-cta:hover { text-decoration: underline; }
+    .tier-card.featured .tier-cta { color: var(--gold); }
+
+    /* ── IN-KIND SPONSORS ── */
+    .inkind-section { margin-top: 72px; border-top: 1px solid rgba(0,0,0,0.08); padding-top: 56px; }
+    .inkind-label { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: rgba(0,0,0,0.35); margin-bottom: 8px; }
+    .inkind-title { font-size: 22px; font-weight: 900; text-transform: uppercase; color: var(--black); margin-bottom: 10px; }
+    .inkind-sub { font-size: 15px; color: rgba(0,0,0,0.50); margin-bottom: 32px; max-width: 540px; }
+    .inkind-grid {
+      display: flex; flex-wrap: wrap; gap: 12px;
+    }
+    .inkind-badge {
+      background: var(--black);
+      color: var(--white);
+      font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 10px 20px; border-radius: 40px;
+      border: 1.5px solid var(--black);
+      transition: background .2s, color .2s, border-color .2s;
+      cursor: default;
+    }
+    .inkind-badge:hover { background: var(--white); color: var(--black); border-color: var(--black); }
+
+    /* ── CTA STRIP ── */
+    .cta-strip { background: var(--red); padding: 80px 48px; text-align: center; }
+    .cta-strip h2 { color: var(--white); font-size: clamp(28px, 4vw, 48px); margin-bottom: 16px; }
+    .cta-strip p { color: rgba(255,255,255,0.80); font-size: 18px; margin-bottom: 40px; }
+    .btn-white {
+      background: var(--white); color: var(--red);
+      padding: 18px 44px; border-radius: 10px;
+      font-size: 14px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+      text-decoration: none; display: inline-block; transition: transform .1s;
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      padding: 48px; display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 24px;
+    }
+    .footer-logo { color: var(--white); font-size: 16px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+    .footer-logo span { color: var(--gold); }
+    .footer-contact {
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .footer-contact a {
+      color: rgba(255,255,255,0.45); font-size: 12px; text-decoration: none; letter-spacing: 0.5px;
+      transition: color .2s;
+    }
+    .footer-contact a:hover { color: var(--gold); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: rgba(255,255,255,0.35); font-size: 12px; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-note { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 900px) {
+      .coach-inner { grid-template-columns: 1fr; }
+      .tiers-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      section { padding: 64px 24px; }
+      .stats-bar { gap: 32px; padding: 24px; }
+      footer { padding: 32px 24px; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Gridiron <span>Griots</span> Girls</div>
+  <div class="nav-links">
+    <a href="#">Programs</a>
+    <a href="#">About</a>
+    <a href="#">Coaches</a>
+    <a href="#">Partners</a>
+    <a href="#">News</a>
+  </div>
+  <a href="#" class="nav-cta">Register Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <div class="hero-eyebrow-text">Gridiron Griots Girls · Arizona · #GirlDad</div>
+    </div>
+    <h1>She Got<br><em>Game Too.</em></h1>
+<div class="hero-buttons">
+      <a href="#" class="btn-primary">Register Your Daughter</a>
+      <a href="#" class="btn-secondary">Partner With Us</a>
+    </div>
+    <div class="hero-credential">
+      <div class="hero-credential-badge">Head Coach</div>
+      <div class="hero-credential-text">
+        <strong>Hamza Abdullah</strong> — 7-Year NFL Safety · Denver Broncos · Arizona Cardinals · Founder, Pro Big Bros
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLLING PARTNER BANNER -->
+<div class="partner-banner">
+  <div class="partner-banner-label">Our Partners & Affiliations</div>
+  <div class="partner-track-wrap">
+    <div class="partner-track">
+      <!-- Set 1 -->
+      <div class="partner-item highlight">Nike</div>
+      <div class="partner-item">USA Flag Football</div>
+      <div class="partner-item">NFL Flag</div>
+      <div class="partner-item">Arizona Cardinals</div>
+      <div class="partner-item">AZ School Districts</div>
+      <div class="partner-item">Pro Big Bros</div>
+      <div class="partner-item highlight">Gridiron Griots</div>
+      <div class="partner-item">USA Flag Football</div>
+      <div class="partner-item">NFL Flag</div>
+      <div class="partner-item">Arizona Cardinals</div>
+      <div class="partner-item">AZ School Districts</div>
+      <div class="partner-item">Pro Big Bros</div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="partner-item highlight">Nike</div>
+      <div class="partner-item">USA Flag Football</div>
+      <div class="partner-item">NFL Flag</div>
+      <div class="partner-item">Arizona Cardinals</div>
+      <div class="partner-item">AZ School Districts</div>
+      <div class="partner-item">Pro Big Bros</div>
+      <div class="partner-item highlight">Gridiron Griots</div>
+      <div class="partner-item">USA Flag Football</div>
+      <div class="partner-item">NFL Flag</div>
+      <div class="partner-item">Arizona Cardinals</div>
+      <div class="partner-item">AZ School Districts</div>
+      <div class="partner-item">Pro Big Bros</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Age Divisions</div></div>
+  <div class="stat"><div class="stat-num">3+</div><div class="stat-label">School Districts</div></div>
+  <div class="stat"><div class="stat-num">5</div><div class="stat-label">Continents Reached</div></div>
+  <div class="stat"><div class="stat-num">2026</div><div class="stat-label">Inaugural Season</div></div>
+</div>
+
+<!-- WHY FLAG FOOTBALL FOR GIRLS -->
+<section class="why">
+  <div class="section-label">Why It Matters</div>
+  <h2>Built Different,<br>By Design</h2>
+  <p class="section-sub">Flag football is the fastest-growing youth sport in America. Girls deserve their own version of it — with coaching built around them, culture built around them, and a path to college built around them.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <h3>Athletic Development</h3>
+      <p>Speed, agility, coordination, and strategy — flag football builds complete athletes at every age group, from first-time players to competitive seniors.</p>
+    </div>
+    <div class="why-card">
+      <h3>Teamwork & Leadership</h3>
+      <p>Every player has a role. Every team has a voice. We build girls who lead on the field and carry that confidence into every part of their lives.</p>
+    </div>
+    <div class="why-card">
+      <h3>College Pipeline</h3>
+      <p>Flag football is now sanctioned at the collegiate level. Our Senior division is designed to put players on the radar of college programs from Day 1.</p>
+    </div>
+    <div class="why-card">
+      <h3>Girls-First Culture</h3>
+      <p>This is not a co-ed program with girls as an afterthought. Female coaches, female leadership, female-centered program design — every decision made for them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section style="text-align:center;">
+  <div class="section-label">Our Programs</div>
+  <h2>Find Your<br>Division</h2>
+  <p class="section-sub" style="margin-left:auto;margin-right:auto;">Three competitive age divisions, each designed for where players are in their athletic development journey.</p>
+  <div class="programs-grid">
+    <div class="program-card">
+      <div class="program-header mini">
+        <div>
+          <div class="program-name">Division 1</div>
+          <div class="program-age">8–10</div>
+        </div>
+      </div>
+      <div class="program-body">
+        <div class="program-title">Mini Division</div>
+        <p>Fundamentals-first. Every girl learns to run routes, throw, catch, and play as a team. Fun, inclusive, no experience required.</p>
+        <a href="#" class="program-link">Register →</a>
+      </div>
+    </div>
+    <div class="program-card">
+      <div class="program-header junior">
+        <div>
+          <div class="program-name">Division 2</div>
+          <div class="program-age">11–13</div>
+        </div>
+      </div>
+      <div class="program-body">
+        <div class="program-title">Junior Division</div>
+        <p>Skill development and competitive play. Structured practices, game strategy, and real competition against other AZ teams.</p>
+        <a href="#" class="program-link">Register →</a>
+      </div>
+    </div>
+    <div class="program-card">
+      <div class="program-header senior">
+        <div>
+          <div class="program-name">Division 3</div>
+          <div class="program-age">14–18</div>
+        </div>
+      </div>
+      <div class="program-body">
+        <div class="program-title">Senior Division</div>
+        <p>High-performance, college-focused play. Showcase events, film study, and direct exposure to collegiate recruiters.</p>
+        <a href="#" class="program-link">Register →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM / TRAINING STATIONS -->
+<section class="curriculum">
+  <div class="section-label">G3 Training System</div>
+  <h2>6 Stations.<br>One Complete<br>Athlete.</h2>
+  <p class="section-sub">Every G3 camp and practice runs through our proven 6-station curriculum — built by NFL veterans and designed specifically for girls.</p>
+  <div class="curriculum-grid">
+    <div class="station-card">
+      <div class="station-letter">A</div>
+      <div class="station-label">Station A</div>
+      <div class="station-name">Foundation</div>
+      <div class="station-desc">Stance, alignment, and footwork. Every great player is built from the ground up. We start here — every single session.</div>
+    </div>
+    <div class="station-card">
+      <div class="station-letter">B</div>
+      <div class="station-label">Station B</div>
+      <div class="station-name">Fundamentals</div>
+      <div class="station-desc">Blocking techniques, hand fighting, and conditioning. The tools every player needs before the playbook opens up.</div>
+    </div>
+    <div class="station-card">
+      <div class="station-letter">C</div>
+      <div class="station-label">Station C</div>
+      <div class="station-name">Football</div>
+      <div class="station-desc">Route running, coverage, and game strategy. Real football IQ — reading defenses, creating separation, executing under pressure.</div>
+    </div>
+    <div class="station-card">
+      <div class="station-letter">D</div>
+      <div class="station-label">Station D</div>
+      <div class="station-name">Focus</div>
+      <div class="station-desc">Mental reps, film study, and situational awareness. The game is 90% mental. We train the mind the same way we train the body.</div>
+    </div>
+    <div class="station-card">
+      <div class="station-letter">E</div>
+      <div class="station-label">Station E</div>
+      <div class="station-name">Quarterback</div>
+      <div class="station-desc">Mechanics, footwork, reading the field, and leading under center. Every G3 player understands the game from behind center.</div>
+    </div>
+    <div class="station-card">
+      <div class="station-letter">G</div>
+      <div class="station-label">Station G</div>
+      <div class="station-name">Finish</div>
+      <div class="station-desc">Live competition, game simulation, and championship mindset. We close every session the same way we close games — with everything on the line.</div>
+    </div>
+  </div>
+</section>
+
+<!-- COACH -->
+<section class="coach">
+  <div class="section-label">Head Coach</div>
+  <h2 style="color:var(--white); margin-bottom:48px;">Coached by<br>The NFL.</h2>
+  <div class="coach-inner">
+    <div class="coach-card">
+      <div class="coach-photo-placeholder">
+        <img src="G3 Flag Football Camp -1.jpg" alt="Hamza Abdullah — Arizona Cardinals #23" />
+        <div class="coach-tag" style="position:relative;z-index:2;">NFL Veteran · 7 Seasons</div>
+      </div>
+      <div class="coach-info">
+        <div class="coach-name">Hamza Abdullah</div>
+        <div class="coach-title">Head Coach · Founder, Pro Big Bros</div>
+        <div class="coach-nfl">
+          <span class="nfl-badge">Denver Broncos</span>
+          <span class="nfl-badge">AZ Cardinals</span>
+          <span class="nfl-badge">Cleveland Browns</span>
+        </div>
+      </div>
+    </div>
+    <div class="coach-content">
+      <p>Hamza Abdullah spent seven seasons as a safety in the NFL — playing for the Denver Broncos, Cleveland Browns, and Arizona Cardinals. A Washington State University team captain, he brought the same discipline and leadership to every locker room he entered.</p>
+      <p>After football, Hamza founded <strong>Pro Big Bros</strong> — a mentoring organization that serves as professional big brothers to college and professional athletes. His mission: make sure the next generation of athletes is prepared for everything the game doesn't teach you.</p>
+      <div class="coach-quote">"The field is where we build athletes. Everything else is where we build people."</div>
+      <p>Hamza brings NFL-level standards, genuine mentorship, and a deep commitment to youth development to every player who steps onto this field.</p>
+      <a href="https://www.instagram.com/probigbros/" target="_blank" class="coach-link">Follow Pro Big Bros on Instagram →</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="section-label">Camp Gallery</div>
+  <h2>Real Girls.<br>Real Game.</h2>
+  <p class="gallery-sub">From the Arizona Cardinals field to championship night — this is what G3 looks like in action.</p>
+  <div class="gallery-frame">
+    <img src="g3-page9-09.jpg" alt="G3 Camp Gallery — Girls Flag Football" />
+    <div class="gallery-frame-label">
+      <span>Arizona Cardinals Facility · Phoenix, AZ</span>
+      <strong>G3 — Gridiron Griots Girls</strong>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION DARK -->
+<section class="mission-dark">
+  <div class="section-label">Our Mission</div>
+  <h2>"We're Not Growing a Program.<br>We're Growing a Movement."</h2>
+  <p>Gridiron Griots Girls (G3) is the premier developmental process designed by #GirlDad former NFL Players. Dedicated to inspire, educate and elevate girls and young women in American Football.</p>
+  <p class="continents-note">Gridiron Griots has reached athletes on <strong>5 continents</strong>. G3 brings that global standard home to Arizona's girls.</p>
+  <a href="#" class="btn-primary">Read Our Story</a>
+  <div class="mission-values">
+    <div class="value">
+      <div class="value-word">Inclusion</div>
+      <div class="value-line"></div>
+      <div class="value-desc">Every girl. Every background.</div>
+    </div>
+    <div class="value">
+      <div class="value-word">Excellence</div>
+      <div class="value-line"></div>
+      <div class="value-desc">High standards. High support.</div>
+    </div>
+    <div class="value">
+      <div class="value-word">Empowerment</div>
+      <div class="value-line"></div>
+      <div class="value-desc">Leaders on and off the field.</div>
+    </div>
+    <div class="value">
+      <div class="value-word">Community</div>
+      <div class="value-line"></div>
+      <div class="value-desc">Built by AZ. For the world.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners">
+  <div class="section-label">Partners & Affiliations</div>
+  <h2>In Good Company</h2>
+  <p class="partners-sub">We're building partnerships with the best organizations in youth sports and sports culture.</p>
+  <div class="partners-grid">
+    <div class="partner-card nike-card">
+      <div class="partner-card-name">Nike</div>
+      <div class="partner-card-role">Apparel & Brand</div>
+      <div class="partner-card-status">In Progress</div>
+    </div>
+    <div class="partner-card">
+      <div class="partner-card-name">USA Flag Football</div>
+      <div class="partner-card-role">National Governing Body</div>
+    </div>
+    <div class="partner-card">
+      <div class="partner-card-name">NFL Flag</div>
+      <div class="partner-card-role">Youth League Program</div>
+    </div>
+    <div class="partner-card">
+      <div class="partner-card-name">AZ Cardinals</div>
+      <div class="partner-card-role">NFL Team Partner</div>
+    </div>
+    <div class="partner-card">
+      <div class="partner-card-name">AZ School Districts</div>
+      <div class="partner-card-role">Program Host Partner</div>
+    </div>
+    <div class="partner-card">
+      <div class="partner-card-name">Pro Big Bros</div>
+      <div class="partner-card-role">Coaching & Mentorship</div>
+    </div>
+  </div>
+  <a href="#" class="btn-primary" style="display:inline-block">Become a Partner</a>
+</section>
+
+<!-- SPONSOR TIERS -->
+<section class="sponsor-tiers">
+  <div class="section-label">Sponsorship</div>
+  <h2>Invest in the<br>Next Generation</h2>
+  <p class="section-sub">Join us as a founding sponsor. Your brand partners with the fastest-growing girls' sport in America — at ground level, before it goes national.</p>
+  <div class="tiers-grid">
+    <div class="tier-card">
+      <div class="tier-name">Community Partner</div>
+      <div class="tier-price">$5,000</div>
+      <ul class="tier-perks">
+        <li>Website logo placement</li>
+        <li>2 social media features per season</li>
+        <li>Season program acknowledgment</li>
+        <li>Invitation to season showcase event</li>
+      </ul>
+      <a href="#" class="tier-cta">Get Started →</a>
+    </div>
+    <div class="tier-card">
+      <div class="tier-name">Gold Partner</div>
+      <div class="tier-price">$10,000</div>
+      <ul class="tier-perks">
+        <li>Website logo + jersey patch</li>
+        <li>4 social media features per season</li>
+        <li>Event signage at all games</li>
+        <li>Dedicated newsletter feature</li>
+        <li>Coach Hamza Abdullah co-post</li>
+      </ul>
+      <a href="#" class="tier-cta">Get Started →</a>
+    </div>
+    <div class="tier-card featured">
+      <div class="tier-name">Presenting Sponsor</div>
+      <div class="tier-price">$25,000</div>
+      <ul class="tier-perks">
+        <li>Name in all event titles</li>
+        <li>Primary jersey branding</li>
+        <li>Category exclusivity</li>
+        <li>Full content rights</li>
+        <li>Co-branded social campaigns</li>
+        <li>Championship event naming</li>
+        <li>National expansion rights option</li>
+      </ul>
+      <a href="#" class="tier-cta">Get In Touch →</a>
+    </div>
+  </div>
+
+  <!-- IN-KIND SPONSORS -->
+  <div class="inkind-section">
+    <div class="inkind-label">In-Kind Opportunities</div>
+    <div class="inkind-title">Support the Field. Own the Category.</div>
+    <p class="inkind-sub">In-kind sponsorships give brands direct visibility at every camp and game day event. Each category is exclusive — first brand in owns it for the season.</p>
+    <div class="inkind-grid">
+      <div class="inkind-badge">Hydration Partner</div>
+      <div class="inkind-badge">Lunch Partner</div>
+      <div class="inkind-badge">T-Shirt Partner</div>
+      <div class="inkind-badge">Swag Bag Partner</div>
+      <div class="inkind-badge">Videographer / Photographer</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="cta-strip">
+  <h2>Your Daughter Belongs on This Field.</h2>
+  <p>Season 1 registration is open. Spots are limited. Don't wait.</p>
+  <a href="#" class="btn-white">Register for Season 1</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Gridiron <span>Griots</span> Girls</div>
+  <div class="footer-contact">
+    <a href="mailto:info@GridironGriots.com">info@GridironGriots.com</a>
+    <a href="https://www.instagram.com/GridironGriots/" target="_blank">@GridironGriots</a>
+  </div>
+  <div class="footer-links">
+    <a href="#">Programs</a>
+    <a href="#">About</a>
+    <a href="#">Sponsors</a>
+    <a href="#">Contact</a>
+    <a href="#">Donate</a>
+  </div>
+  <div class="footer-note">© 2026 Gridiron Griots Girls (G3) · 501(c)(3) · Phoenix, Arizona</div>
+</footer>
+
+</body>
+</html>
