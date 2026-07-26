@@ -1,0 +1,66 @@
+[agent]
+project_id  = "cakedup"
+agent_type  = "generalist"
+scale       = "small"
+description = "Junior cake business digital transformation — free tools only, $0 budget, $50 to $350/month revenue growth target."
+last_updated = "2026-02-19"
+
+[agent.tasks]
+active = [
+    "project_status_report",
+    "risk_alert",
+    "marketing_plan",
+    "mgmt_brief",
+]
+
+completed = [
+    "website_setup_guide",
+    "sheets_upgrade_guide",
+    "vendor_followup",
+]
+
+# Deliverables produced this session (ready for AT to use)
+[agent.deliverables]
+produced = [
+    "deliverables/website/index.html",
+    "deliverables/scripts/build_order_sheet.js",
+    "deliverables/scripts/build_order_form.js",
+    "deliverables/canva_design_brief.md",
+    "deliverables/social_media_launch_kit.md",
+    "deliverables/order_tracker_template.csv",
+    "deliverables/order_form_spec.md",
+    "deliverables/website_copy.md",
+    "deliverables/sheets_formula_sheet.md",
+    "deliverables/README.md",
+]
+
+[agent.overrides]
+risk_alert_threshold         = 4
+milestone_at_risk_days       = 5
+vendor_followup_warn_days    = 3
+audience_primary             = "AT"
+tone                         = "friendly, encouraging, clear — written for a junior business owner, not a corporate PM"
+budget_currency              = "USD"
+
+# Design decisions locked — do not revert
+[agent.design_decisions]
+theme           = "Tiffany Blue — primary #0ABAB5, light #E0F7F6, silver #B0B8C1"
+payment         = "Cash App + cash in person only — Venmo removed"
+menu            = "$3 / $5 / $10 / $12-$15 — 3-Pack ($7) removed"
+flavors         = ["Carrot Cake", "Berry Explosion", "Cookies & Cream", "Texas Vanilla Bean"]
+website_stack   = "HTML/CSS single page — not Google Sites"
+social_media    = "Postponed — Instagram handle not yet confirmed, section removed from website"
+form_embed      = "Google Form embedded via iframe — form ID: 1FAIpQLSe9lgh8xYclT8E1OAS1Qxx6CT4WkpZjGHrtICl5RnGMcNwDcQ"
+
+# Pending AT actions before Phase 2 can begin
+[agent.at_pending_actions]
+actions = [
+    "Run build_order_sheet.js in Google Apps Script to build the order tracker",
+    "Take 5+ photos of cakes (natural light, clean background)",
+    "Execute Canva brand kit from canva_design_brief.md",
+    "Host index.html on GitHub Pages (free)",
+    "Add Instagram handle to website nav/contact/footer",
+    "Add Cash App handle to website and order confirmation DM template",
+    "Test full order flow end-to-end (form → sheet → DM → payment)",
+    "Report back with AT's feedback and additional requirements",
+]

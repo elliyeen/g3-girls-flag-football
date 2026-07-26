@@ -1,0 +1,166 @@
+id              = "medium_project"
+name            = "Office Relocation — Single Floor"
+sponsor         = "Sandra Wu, COO"
+pm              = "Alex Torres"
+start_date      = "2026-02-01"
+target_end_date = "2026-06-13"
+current_phase   = "Phase 1: Planning & Design"
+overall_status  = "on_track"
+project_scale   = "medium"
+project_type    = "mixed"
+budget_total_usd = 85000
+budget_spent_usd = 9800
+
+[[phases]]
+name           = "Phase 1: Planning & Design"
+start_date     = "2026-02-01"
+end_date       = "2026-02-28"
+status         = "in_progress"
+completion_pct = 60
+
+[[phases]]
+name           = "Phase 2: Vendor Contracting & Procurement"
+start_date     = "2026-03-01"
+end_date       = "2026-03-31"
+status         = "not_started"
+completion_pct = 0
+
+[[phases]]
+name           = "Phase 3: Build-Out & IT Infrastructure"
+start_date     = "2026-04-01"
+end_date       = "2026-05-15"
+status         = "not_started"
+completion_pct = 0
+
+# Phase 1 Milestones
+[[milestones]]
+id           = "MS-001"
+name         = "Space Needs Assessment Complete"
+owner        = "Sandra Wu"
+due_date     = "2026-02-06"
+completed_date = "2026-02-06"
+status       = "complete"
+dependencies = []
+
+[[milestones]]
+id           = "MS-002"
+name         = "Floor Plan and Layout Approved"
+owner        = "Alex Torres"
+due_date     = "2026-02-13"
+completed_date = "2026-02-13"
+status       = "complete"
+dependencies = ["MS-001"]
+
+[[milestones]]
+id           = "MS-003"
+name         = "IT Infrastructure Requirements Documented"
+owner        = "IT Lead (TBD)"
+due_date     = "2026-02-20"
+status       = "in_progress"
+dependencies = ["MS-002"]
+
+[[milestones]]
+id           = "MS-004"
+name         = "RFP Issued to Contractors and Furniture Vendors"
+owner        = "Alex Torres"
+due_date     = "2026-02-27"
+status       = "not_started"
+dependencies = ["MS-002", "MS-003"]
+
+[[milestones]]
+id           = "MS-005"
+name         = "Budget Baseline Approved by Finance"
+owner        = "Sandra Wu"
+due_date     = "2026-02-28"
+status       = "not_started"
+dependencies = ["MS-004"]
+
+# Phase 2 Milestones
+[[milestones]]
+id           = "MS-006"
+name         = "General Contractor Selected and Contracted"
+owner        = "Alex Torres"
+due_date     = "2026-03-10"
+status       = "not_started"
+dependencies = ["MS-004"]
+
+[[milestones]]
+id           = "MS-007"
+name         = "Furniture and Fixtures Order Placed"
+owner        = "Alex Torres"
+due_date     = "2026-03-14"
+status       = "not_started"
+dependencies = ["MS-005", "MS-006"]
+
+[[milestones]]
+id           = "MS-008"
+name         = "IT Hardware and Cabling Vendor Contracted"
+owner        = "IT Lead (TBD)"
+due_date     = "2026-03-14"
+status       = "not_started"
+dependencies = ["MS-003"]
+
+[[milestones]]
+id           = "MS-009"
+name         = "Moving Company Booked"
+owner        = "Alex Torres"
+due_date     = "2026-03-20"
+status       = "not_started"
+dependencies = []
+
+[[milestones]]
+id           = "MS-010"
+name         = "Building Management Permits and Access Confirmed"
+owner        = "Alex Torres"
+due_date     = "2026-03-31"
+status       = "not_started"
+dependencies = ["MS-006"]
+
+# Phase 3 Milestones — selected key milestones
+[[milestones]]
+id           = "MS-011"
+name         = "Construction and Build-Out Complete"
+owner        = "General Contractor"
+due_date     = "2026-04-30"
+status       = "not_started"
+dependencies = ["MS-006", "MS-010"]
+
+[[milestones]]
+id           = "MS-012"
+name         = "IT Cabling and Network Infrastructure Installed"
+owner        = "IT Lead (TBD)"
+due_date     = "2026-05-08"
+status       = "not_started"
+dependencies = ["MS-008", "MS-011"]
+
+[[milestones]]
+id           = "MS-013"
+name         = "Furniture Delivery and Installation Complete"
+owner        = "Alex Torres"
+due_date     = "2026-05-10"
+status       = "not_started"
+dependencies = ["MS-007", "MS-011"]
+
+[[milestones]]
+id           = "MS-014"
+name         = "IT Systems Tested and Signed Off"
+owner        = "IT Lead (TBD)"
+due_date     = "2026-05-13"
+status       = "not_started"
+dependencies = ["MS-012"]
+
+[[milestones]]
+id           = "MS-015"
+name         = "Move Day Complete — All Staff Relocated"
+owner        = "Alex Torres"
+due_date     = "2026-06-05"
+status       = "not_started"
+dependencies = ["MS-009", "MS-013", "MS-014"]
+
+[[milestones]]
+id           = "MS-016"
+name         = "Post-Move Issues Resolved — Project Close"
+owner        = "Sandra Wu"
+due_date     = "2026-06-13"
+status       = "not_started"
+dependencies = ["MS-015"]

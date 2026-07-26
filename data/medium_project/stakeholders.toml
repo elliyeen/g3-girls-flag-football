@@ -1,0 +1,99 @@
+[[stakeholders]]
+id               = "STK-001"
+name             = "Sandra Wu"
+title            = "COO"
+email            = "swu@client.com"
+role             = "executive_sponsor"
+update_frequency = "bi_weekly"
+detail_level     = "executive"
+focus_areas      = ["budget", "timeline", "go_live_date"]
+
+[[stakeholders]]
+id               = "STK-002"
+name             = "Alex Torres"
+title            = "Project Manager"
+email            = "atorres@client.com"
+role             = "project_manager"
+update_frequency = "daily"
+detail_level     = "operational"
+focus_areas      = ["milestones", "vendors", "risks", "dependencies"]
+
+[[stakeholders]]
+id               = "STK-003"
+name             = "IT Lead (TBD)"
+title            = "Head of IT Infrastructure"
+email            = "it-lead@client.com"
+role             = "workstream_lead"
+update_frequency = "weekly"
+detail_level     = "operational"
+focus_areas      = ["it_milestones", "cabling", "vendor_it"]
+
+[[stakeholders]]
+id               = "STK-004"
+name             = "Finance Team"
+title            = "Finance Department"
+email            = "finance@client.com"
+role             = "budget_approver"
+update_frequency = "monthly"
+detail_level     = "management"
+focus_areas      = ["budget", "invoices", "change_orders"]
+
+[[stakeholders]]
+id               = "STK-005"
+name             = "Department Heads"
+title            = "All Relocating Department Heads"
+email            = "dept-heads@client.com"
+role             = "impacted_stakeholder"
+update_frequency = "bi_weekly"
+detail_level     = "management"
+focus_areas      = ["move_date", "seating_plan", "it_readiness"]
+
+[[stakeholders]]
+id               = "STK-006"
+name             = "HR Team"
+title            = "Human Resources"
+email            = "hr@client.com"
+role             = "change_management_lead"
+update_frequency = "weekly"
+detail_level     = "management"
+focus_areas      = ["staff_communications", "move_readiness"]
+
+[[stakeholders]]
+id               = "STK-007"
+name             = "Building Management"
+title            = "Property Manager"
+email            = "building@propertyco.com"
+role             = "external_partner"
+update_frequency = "as_needed"
+detail_level     = "management"
+focus_areas      = ["permits", "access", "construction_schedule"]
+
+[[stakeholders]]
+id               = "STK-008"
+name             = "Legal Team"
+title            = "Corporate Counsel"
+email            = "legal@client.com"
+role             = "contract_reviewer"
+update_frequency = "on_milestone"
+detail_level     = "management"
+focus_areas      = ["vendor_contracts", "lease_amendment"]
+
+[[stakeholders]]
+id               = "STK-009"
+name             = "General Contractor PM"
+title            = "On-Site Project Lead"
+email            = "pm@contractor.com"
+role             = "vendor_lead"
+update_frequency = "weekly"
+detail_level     = "operational"
+focus_areas      = ["construction_schedule", "permits", "subcontractors"]
+
+[[stakeholders]]
+id               = "STK-010"
+name             = "Office Staff (All)"
+title            = "All Relocating Employees"
+email            = "all-staff@client.com"
+role             = "end_user"
+update_frequency = "monthly"
+detail_level     = "management"
+focus_areas      = ["move_date", "new_location", "seating"]

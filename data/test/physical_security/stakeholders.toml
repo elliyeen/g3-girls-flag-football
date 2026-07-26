@@ -1,0 +1,39 @@
+[[stakeholders]]
+id               = "STK-001"
+name             = "Morgan Hayes"
+title            = "VP Operations"
+email            = "mhayes@client.com"
+role             = "executive_sponsor"
+update_frequency = "weekly"
+detail_level     = "management"
+focus_areas      = ["budget", "timeline", "attendance"]
+
+[[stakeholders]]
+id               = "STK-002"
+name             = "Alex Torres"
+title            = "Project Manager"
+email            = "atorres@client.com"
+role             = "project_manager"
+update_frequency = "daily"
+detail_level     = "operational"
+focus_areas      = ["milestones", "vendors", "risks"]
+
+[[stakeholders]]
+id               = "STK-003"
+name             = "Department All-Hands Attendees"
+title            = "Operations Department"
+email            = "ops-all@client.com"
+role             = "attendee"
+update_frequency = "on_milestone"
+detail_level     = "management"
+focus_areas      = ["event_date", "agenda"]
+
+[[stakeholders]]
+id               = "STK-004"
+name             = "Finance Team"
+title            = "Finance Department"
+email            = "finance@client.com"
+role             = "budget_approver"
+update_frequency = "on_milestone"
+detail_level     = "management"
+focus_areas      = ["budget", "invoices"]

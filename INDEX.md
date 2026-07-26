@@ -16,7 +16,7 @@ The complete index of everything in this workspace. Every folder, every document
 ## Workspace Structure
 
 ```
-Tech PM/
+Seal/
 ├── INDEX.md                        ← you are here
 ├── docs/                           ← all documentation
 │   ├── INDEX.md

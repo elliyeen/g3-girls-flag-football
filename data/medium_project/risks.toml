@@ -1,0 +1,103 @@
+[[risks]]
+id                  = "RISK-001"
+title               = "Construction Permit Delay"
+category            = "compliance"
+probability         = "medium"
+impact              = "high"
+status              = "open"
+owner               = "Alex Torres"
+identified_date     = "2026-02-01"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Submit permit application by Feb 28. Engage expediter if permit not issued by March 10. Maintain 2-week float in Phase 3 schedule."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-002"
+title               = "IT Lead Role Unfilled — Dependency Risk"
+category            = "resource"
+probability         = "high"
+impact              = "high"
+status              = "open"
+owner               = "Sandra Wu"
+identified_date     = "2026-02-01"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "COO to designate interim IT Lead by Feb 20. If not filled, escalate to CTO to assign. All IT milestones blocked until role is filled."
+escalation_required = true
+
+[[risks]]
+id                  = "RISK-003"
+title               = "Furniture Lead Time Exceeds Schedule"
+category            = "vendor"
+probability         = "medium"
+impact              = "medium"
+status              = "open"
+owner               = "Alex Torres"
+identified_date     = "2026-02-10"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Request 10-week lead time confirmation from Meridian at contract signing. Identify backup supplier. Place order no later than March 14."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-004"
+title               = "Budget Overrun on Construction"
+category            = "budget"
+probability         = "medium"
+impact              = "high"
+status              = "open"
+owner               = "Alex Torres"
+identified_date     = "2026-02-01"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Cap contractor bid at $45K. Maintain $8K contingency reserve. Require written change order approval from COO for any out-of-scope work >$1K."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-005"
+title               = "Staff Resistance to Open Office Layout"
+category            = "org"
+probability         = "medium"
+impact              = "medium"
+status              = "open"
+owner               = "HR Team"
+identified_date     = "2026-02-10"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "HR to run two feedback sessions on floor plan by Feb 28. Publish seating FAQ. Assign change champions per department."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-006"
+title               = "Move Day Disruption to Business Operations"
+category            = "schedule"
+probability         = "low"
+impact              = "high"
+status              = "open"
+owner               = "Alex Torres"
+identified_date     = "2026-02-15"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Schedule move on a Friday/weekend. Ensure IT systems are live and tested before move day. Conduct walkthrough with department heads 1 week prior."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-007"
+title               = "Lease Amendment Delayed — New Space Not Legally Secured"
+category            = "compliance"
+probability         = "low"
+impact              = "high"
+status              = "open"
+owner               = "Legal Team"
+identified_date     = "2026-02-01"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Legal to begin amendment drafting by Feb 21. Target execution by March 15. Contractor work does not begin until lease is executed."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-008"
+title               = "Network Downtime During IT Cutover"
+category            = "technical"
+probability         = "low"
+impact              = "high"
+status              = "open"
+owner               = "IT Lead (TBD)"
+identified_date     = "2026-02-15"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "NetRun to provide detailed cutover plan with rollback procedure. Schedule cutover during off-hours. Test connectivity 48 hours before move day."
+escalation_required = false

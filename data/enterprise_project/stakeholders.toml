@@ -1,0 +1,255 @@
+# Enterprise scale: 25 stakeholders across 4 tiers (board, exec, mgmt, ops)
+
+# BOARD TIER
+[[stakeholders]]
+id               = "STK-001"
+name             = "Board of Directors"
+title            = "Board"
+email            = "board@client.com"
+role             = "board"
+update_frequency = "quarterly"
+detail_level     = "executive"
+focus_areas      = ["program_status", "budget", "strategic_risk"]
+
+[[stakeholders]]
+id               = "STK-002"
+name             = "Audit Committee Chair"
+title            = "Board Audit Committee"
+email            = "audit-chair@client.com"
+role             = "board"
+update_frequency = "quarterly"
+detail_level     = "executive"
+focus_areas      = ["compliance", "security", "audit_readiness"]
+
+# EXECUTIVE TIER
+[[stakeholders]]
+id               = "STK-003"
+name             = "Katherine Reyes"
+title            = "CEO"
+email            = "kreyes@client.com"
+role             = "executive_sponsor"
+update_frequency = "bi_weekly"
+detail_level     = "executive"
+focus_areas      = ["overall_status", "budget", "go_live_dates", "strategic_risk"]
+
+[[stakeholders]]
+id               = "STK-004"
+name             = "James Park"
+title            = "CFO"
+email            = "jpark@client.com"
+role             = "executive"
+update_frequency = "monthly"
+detail_level     = "executive"
+focus_areas      = ["budget", "evm_metrics", "roi_tracking"]
+
+[[stakeholders]]
+id               = "STK-005"
+name             = "Priya Singh"
+title            = "CTO"
+email            = "psingh@client.com"
+role             = "executive"
+update_frequency = "bi_weekly"
+detail_level     = "executive"
+focus_areas      = ["technical_milestones", "security", "legacy_decommission"]
+
+[[stakeholders]]
+id               = "STK-006"
+name             = "Marcus Webb"
+title            = "COO"
+email            = "mwebb@client.com"
+role             = "executive"
+update_frequency = "bi_weekly"
+detail_level     = "executive"
+focus_areas      = ["operations_wave", "change_management", "go_live_readiness"]
+
+# MANAGEMENT TIER
+[[stakeholders]]
+id               = "STK-007"
+name             = "Alex Torres"
+title            = "Program Manager"
+email            = "atorres@client.com"
+role             = "project_manager"
+update_frequency = "daily"
+detail_level     = "operational"
+focus_areas      = ["all"]
+
+[[stakeholders]]
+id               = "STK-008"
+name             = "Finance Department Head"
+title            = "VP Finance"
+email            = "vp-finance@client.com"
+role             = "business_owner"
+update_frequency = "weekly"
+detail_level     = "management"
+focus_areas      = ["finance_wave", "training", "go_live", "data_accuracy"]
+
+[[stakeholders]]
+id               = "STK-009"
+name             = "HR Department Head"
+title            = "VP People"
+email            = "vp-hr@client.com"
+role             = "business_owner"
+update_frequency = "weekly"
+detail_level     = "management"
+focus_areas      = ["hr_wave", "training", "change_management"]
+
+[[stakeholders]]
+id               = "STK-010"
+name             = "Operations Department Head"
+title            = "VP Operations"
+email            = "vp-ops@client.com"
+role             = "business_owner"
+update_frequency = "weekly"
+detail_level     = "management"
+focus_areas      = ["operations_wave", "logistics_integration", "cutover"]
+
+[[stakeholders]]
+id               = "STK-011"
+name             = "Logistics Department Head"
+title            = "VP Logistics"
+email            = "vp-logistics@client.com"
+role             = "business_owner"
+update_frequency = "weekly"
+detail_level     = "management"
+focus_areas      = ["logistics_wave", "wms_integration", "go_live"]
+
+[[stakeholders]]
+id               = "STK-012"
+name             = "Legal and Compliance Lead"
+title            = "General Counsel"
+email            = "legal@client.com"
+role             = "compliance_owner"
+update_frequency = "monthly"
+detail_level     = "management"
+focus_areas      = ["compliance_frameworks", "data_privacy", "audit_readiness"]
+
+[[stakeholders]]
+id               = "STK-013"
+name             = "CISO"
+title            = "Chief Information Security Officer"
+email            = "ciso@client.com"
+role             = "security_owner"
+update_frequency = "bi_weekly"
+detail_level     = "management"
+focus_areas      = ["security_controls", "soc2_audit", "vendor_attestations", "pen_test"]
+
+[[stakeholders]]
+id               = "STK-014"
+name             = "Change Management Lead"
+title            = "Organizational Change Manager"
+email            = "ocm@client.com"
+role             = "change_lead"
+update_frequency = "weekly"
+detail_level     = "management"
+focus_areas      = ["adoption_metrics", "training_completion", "resistance_issues"]
+
+[[stakeholders]]
+id               = "STK-015"
+name             = "Data Governance Owner"
+title            = "Head of Data"
+email            = "data-gov@client.com"
+role             = "data_owner"
+update_frequency = "bi_weekly"
+detail_level     = "management"
+focus_areas      = ["data_migration_accuracy", "data_quality", "gdpr_compliance"]
+
+# OPERATIONAL TIER
+[[stakeholders]]
+id               = "STK-016"
+name             = "ERP Vendor — Implementation Lead"
+title            = "Senior Implementation Manager"
+email            = "impl-lead@erpvendor.com"
+role             = "vendor_lead"
+update_frequency = "weekly"
+detail_level     = "operational"
+focus_areas      = ["configuration", "milestones", "environment_readiness"]
+
+[[stakeholders]]
+id               = "STK-017"
+name             = "ERP Vendor — Technical Architect"
+title            = "Solution Architect"
+email            = "architect@erpvendor.com"
+role             = "vendor_technical"
+update_frequency = "bi_weekly"
+detail_level     = "operational"
+focus_areas      = ["integrations", "performance", "security_design"]
+
+[[stakeholders]]
+id               = "STK-018"
+name             = "Data Migration Lead"
+title            = "Senior Data Engineer"
+email            = "datamig@client.com"
+role             = "workstream_lead"
+update_frequency = "weekly"
+detail_level     = "operational"
+focus_areas      = ["migration_progress", "data_quality", "reconciliation"]
+
+[[stakeholders]]
+id               = "STK-019"
+name             = "Training Lead"
+title            = "Learning & Development Manager"
+email            = "training@client.com"
+role             = "workstream_lead"
+update_frequency = "weekly"
+detail_level     = "operational"
+focus_areas      = ["training_completion_rates", "super_user_readiness"]
+
+[[stakeholders]]
+id               = "STK-020"
+name             = "IT Infrastructure Lead"
+title            = "Head of IT Operations"
+email            = "it-infra@client.com"
+role             = "workstream_lead"
+update_frequency = "weekly"
+detail_level     = "operational"
+focus_areas      = ["infrastructure_readiness", "network", "access_provisioning"]
+
+[[stakeholders]]
+id               = "STK-021"
+name             = "Finance Super Users (Group)"
+title            = "Finance Power Users"
+email            = "finance-superusers@client.com"
+role             = "super_user_group"
+update_frequency = "weekly"
+detail_level     = "operational"
+focus_areas      = ["uat_results", "training", "cutover_readiness"]
+
+[[stakeholders]]
+id               = "STK-022"
+name             = "HR Super Users (Group)"
+title            = "HR Power Users"
+email            = "hr-superusers@client.com"
+role             = "super_user_group"
+update_frequency = "weekly"
+detail_level     = "operational"
+focus_areas      = ["uat_results", "training", "cutover_readiness"]
+
+[[stakeholders]]
+id               = "STK-023"
+name             = "External Auditor (SOC 2)"
+title            = "Audit Partner"
+email            = "auditor@auditfirm.com"
+role             = "external_auditor"
+update_frequency = "quarterly"
+detail_level     = "management"
+focus_areas      = ["control_evidence", "audit_schedule", "findings_remediation"]
+
+[[stakeholders]]
+id               = "STK-024"
+name             = "Integration Partners (WMS, Payroll)"
+title            = "System Integration Vendors"
+email            = "integrations@client.com"
+role             = "integration_vendor_group"
+update_frequency = "bi_weekly"
+detail_level     = "operational"
+focus_areas      = ["api_readiness", "test_results", "cutover_coordination"]
+
+[[stakeholders]]
+id               = "STK-025"
+name             = "All Company Staff"
+title            = "End Users"
+email            = "all-staff@client.com"
+role             = "end_user"
+update_frequency = "monthly"
+detail_level     = "management"
+focus_areas      = ["go_live_dates", "training_schedule", "support_contacts"]

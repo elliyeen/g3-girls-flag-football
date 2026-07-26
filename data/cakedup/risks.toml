@@ -1,0 +1,75 @@
+[[risks]]
+id                   = "RISK-001"
+title                = "Pricing too low to reach revenue target without high volume"
+description          = "At $3 per cake, reaching $350/month requires selling ~117 cakes. That is a lot of baking. The current pricing model makes the revenue goal volume-dependent. Introducing a custom cake tier at $15–$25 dramatically reduces the number of cakes needed to hit the target."
+category             = "budget"
+probability          = 3
+impact               = 3
+score                = 9
+status               = "open"
+escalation_required  = true
+owner                = "AT"
+mitigation           = "Introduce custom decorated cake tier at $15–$25. This is MS-009. One custom cake per week at $20 = $80/month from custom alone. Rebalance pricing in Phase 3."
+identified_date      = "2026-02-19"
+last_updated         = "2026-02-19"
+signal               = "blocker"
+
+[[risks]]
+id                   = "RISK-002"
+title                = "Cake photos not ready — delays website and social media launch"
+description          = "The Google Sites website and Instagram/TikTok require good cake photos to look professional and appealing. If AT doesn't have high-quality photos ready, the website will look empty and social media posts won't perform. This is the most common reason small food business websites stall."
+category             = "schedule"
+probability          = 3
+impact               = 2
+score                = 6
+status               = "open"
+escalation_required  = false
+owner                = "AT"
+mitigation           = "Use natural lighting + phone camera. Canva free templates make even basic photos look professional. Target: 5 good cake photos before website goes live. Shoot next batch of cakes before eating/delivering."
+identified_date      = "2026-02-19"
+last_updated         = "2026-02-19"
+
+[[risks]]
+id                   = "RISK-003"
+title                = "Social media consistency — posting falls off after launch"
+description          = "Many small businesses launch social media accounts with enthusiasm and then stop posting after 2–3 weeks. Consistent posting (3x per week minimum) is required to build an audience and convert followers to customers. Inconsistency kills growth faster than anything else."
+category             = "schedule"
+probability          = 2
+impact               = 3
+score                = 6
+status               = "open"
+escalation_required  = false
+owner                = "AT"
+mitigation           = "Batch-create content. Use Canva to prepare 2 weeks of posts at once. Schedule content to post on Monday, Wednesday, Friday. Set a weekly reminder."
+identified_date      = "2026-02-19"
+last_updated         = "2026-02-19"
+
+[[risks]]
+id                   = "RISK-004"
+title                = "Order volume exceeds baking capacity"
+description          = "If marketing works well, AT may receive more orders than she can fulfill. This is a good problem to have but needs a plan — unfulfilled orders damage reputation. At $350/month with custom cakes, volume is manageable. But if a TikTok post goes viral, order volume could spike."
+category             = "resource"
+probability          = 1
+impact               = 2
+score                = 2
+status               = "monitoring"
+escalation_required  = false
+owner                = "AT"
+mitigation           = "Add a 'slots available this week' notice to the website. Use the Google Form to collect a pickup date — if a date is full, note it. Keep a simple availability tracker in the Sheet."
+identified_date      = "2026-02-19"
+last_updated         = "2026-02-19"
+
+[[risks]]
+id                   = "RISK-005"
+title                = "Google Sites website looks too plain without good design"
+description          = "Google Sites has a reputation for looking basic. Without brand colors, a logo, and good photos, the website won't match the 'fun and girly' aesthetic AT wants. This could undermine customer confidence."
+category             = "technical"
+probability          = 2
+impact               = 2
+score                = 4
+status               = "open"
+escalation_required  = false
+owner                = "AT"
+mitigation           = "Complete MS-003 (Canva brand kit) before building the site. Use brand colors throughout Google Sites. Embed Canva graphics directly into the site. A branded site built well on Google Sites looks professional."
+identified_date      = "2026-02-19"
+last_updated         = "2026-02-19"

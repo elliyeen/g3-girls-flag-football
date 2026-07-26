@@ -1,0 +1,56 @@
+[[vendors]]
+id     = "VEN-001"
+name   = "Grand Hall Venue Services"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Priya Mehta"
+email = "pmehta@grandhall.com"
+role  = "Events Coordinator"
+
+[[vendors.deliverables]]
+id           = "DEL-001"
+description  = "Venue booking confirmation and contract"
+due_date     = "2026-02-19"
+completed    = false
+priority     = "critical"
+
+[[vendors.follow_ups]]
+id        = "FU-001"
+subject   = "Confirm capacity and AV availability for March 24"
+due_date  = "2026-02-19"
+completed = false
+priority  = "high"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-002"
+name   = "Taste & Gather Catering"
+status = "onboarding"
+
+[vendors.primary_contact]
+name  = "Devon Park"
+email = "dpark@tasteandgather.com"
+role  = "Account Manager"
+
+[[vendors.deliverables]]
+id          = "DEL-002"
+description = "Menu proposal and per-head quote"
+due_date    = "2026-02-26"
+completed   = false
+priority    = "high"
+
+[[vendors.deliverables]]
+id          = "DEL-003"
+description = "Final catering order confirmation"
+due_date    = "2026-03-07"
+completed   = false
+priority    = "high"
+
+[[vendors.follow_ups]]
+id        = "FU-002"
+subject   = "Request dietary restriction accommodation options"
+due_date  = "2026-02-20"
+completed = false
+priority  = "medium"

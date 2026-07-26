@@ -1,0 +1,100 @@
+[[vendors]]
+id              = "VEN-001"
+name            = "Google Sites"
+category        = "website"
+cost_monthly    = 0.00
+is_free         = true
+contact         = "sites.google.com"
+attestation     = "Google LLC — enterprise-grade infrastructure"
+is_current      = true
+notes           = "Free website builder. AT's website will be hosted here. Integrates natively with Google Forms and Google Sheets."
+
+[[vendors]]
+id              = "VEN-002"
+name            = "Google Forms"
+category        = "order_intake"
+cost_monthly    = 0.00
+is_free         = true
+contact         = "forms.google.com"
+attestation     = "Google LLC — enterprise-grade infrastructure"
+is_current      = true
+notes           = "Free order form. Responses feed directly into Google Sheets automatically. No setup cost."
+
+[[vendors]]
+id              = "VEN-003"
+name            = "Google Sheets"
+category        = "order_management"
+cost_monthly    = 0.00
+is_free         = true
+contact         = "sheets.google.com"
+attestation     = "Google LLC — enterprise-grade infrastructure"
+is_current      = true
+notes           = "Current operational tool. Being upgraded with proper order tracking, revenue dashboard, and goal tracker."
+
+[[vendors]]
+id              = "VEN-004"
+name            = "Canva"
+category        = "design"
+cost_monthly    = 0.00
+is_free         = true
+contact         = "canva.com"
+attestation     = "Canva Pty Ltd"
+is_current      = true
+notes           = "Free tier. Logo, brand kit, social media post templates. Free tier is sufficient for small business needs."
+
+[[vendors]]
+id              = "VEN-005"
+name            = "Instagram"
+category        = "marketing"
+cost_monthly    = 0.00
+is_free         = true
+contact         = "instagram.com"
+attestation     = "Meta Platforms Inc."
+is_current      = false
+notes           = "Account not yet created. Primary visual marketing platform. Cake content performs very well. Target: 3 posts/week."
+
+[[vendors]]
+id              = "VEN-006"
+name            = "TikTok"
+category        = "marketing"
+cost_monthly    = 0.00
+is_free         = true
+contact         = "tiktok.com"
+attestation     = "ByteDance Ltd."
+is_current      = false
+notes           = "Account not yet created. Short video platform — cake decorating videos and 'order with me' content go viral. Secondary to Instagram but high upside."
+
+[[vendors]]
+id              = "VEN-007"
+name            = "Cash App / Venmo"
+category        = "payment"
+cost_monthly    = 0.00
+is_free         = true
+contact         = "cash.app / venmo.com"
+attestation     = "Block Inc. / PayPal Inc."
+is_current      = false
+notes           = "Free peer-to-peer payment. No monthly fees. Link displayed on website and in order confirmation. AT to create account if not already active."
+
+[[vendors.follow_ups]]
+id         = "FU-001"
+vendor_id  = "VEN-005"
+item       = "Create Instagram account and post first 3 photos"
+due_date   = "2026-03-10"
+priority   = "high"
+status     = "pending"
+
+[[vendors.follow_ups]]
+id         = "FU-002"
+vendor_id  = "VEN-006"
+item       = "Create TikTok account and post first video (cake process or reveal)"
+due_date   = "2026-03-10"
+priority   = "medium"
+status     = "pending"
+
+[[vendors.follow_ups]]
+id         = "FU-003"
+vendor_id  = "VEN-007"
+item       = "Confirm Cash App / Venmo handle and add to website and order confirmation"
+due_date   = "2026-02-26"
+priority   = "high"
+status     = "pending"

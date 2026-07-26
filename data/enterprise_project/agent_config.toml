@@ -1,0 +1,44 @@
+agent_name    = "Enterprise Agent — Company-Wide ERP Rollout"
+agent_version = "1.0.0"
+project_type  = "technical"
+description   = "5-phase, multi-workstream ERP program. $2.1M budget, 18-month timeline, 12 vendors, 25 stakeholders, SOC 2 / ISO 27001 / GDPR compliance scope."
+
+tasks = [
+    # Core (all scales)
+    "project_status_report",
+    "overdue_check",
+
+    # Small+
+    "risk_summary",
+    "vendor_followup",
+    "stakeholder_brief_mgmt",
+    "sprint_standup",
+    "sprint_scope",
+
+    # Medium+
+    "stakeholder_brief_exec",
+    "stakeholder_brief_ops",
+    "budget_burn_report",
+    "milestone_dependency_check",
+    "compliance_deadline_monitor",
+    "sprint_review",
+    "retrospective_input",
+    "signal_emit_blocker",
+    "signal_emit_dependency_done",
+
+    # Enterprise only
+    "exec_dashboard",
+    "compliance_posture_report",
+    "program_risk_report",
+    "vendor_security_audit",
+    "change_impact_assessment",
+    "signal_all",
+]
+
+[overrides]
+risk_alert_threshold         = 4   # Alert earlier — enterprise risk is higher impact
+milestone_at_risk_days       = 21  # Longer runways; flag 3 weeks out
+vendor_followup_warn_days    = 5
+compliance_alert_days        = 45  # More lead time for audits and cert renewals
+security_finding_stale_days  = 21  # 3-week staleness limit for security findings
+pen_test_open_critical_days  = 30  # Critical pen test findings must close in 30 days

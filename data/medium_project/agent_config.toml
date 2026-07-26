@@ -1,0 +1,29 @@
+agent_name    = "Medium Project Agent — Office Relocation"
+agent_version = "1.0.0"
+project_type  = "mixed"
+description   = "3-phase office relocation: planning, procurement, and build-out. $85K budget, 4-month timeline, 6 vendors."
+
+tasks = [
+    "project_status_report",
+    "overdue_check",
+    "risk_summary",
+    "vendor_followup",
+    "stakeholder_brief_mgmt",
+    "stakeholder_brief_exec",
+    "stakeholder_brief_ops",
+    "budget_burn_report",
+    "milestone_dependency_check",
+    "compliance_deadline_monitor",
+    "sprint_standup",
+    "sprint_scope",
+    "sprint_review",
+    "retrospective_input",
+    "signal_emit_blocker",
+    "signal_emit_dependency_done",
+]
+
+[overrides]
+risk_alert_threshold      = 6
+milestone_at_risk_days    = 14
+vendor_followup_warn_days = 3
+compliance_alert_days     = 30
