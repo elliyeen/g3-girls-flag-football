@@ -1,0 +1,250 @@
+id              = "enterprise_project"
+name            = "Company-Wide ERP Rollout"
+sponsor         = "Katherine Reyes, CEO"
+pm              = "Alex Torres"
+start_date      = "2025-06-01"
+target_end_date = "2026-12-31"
+current_phase   = "Phase 2: Pilot Deployment"
+overall_status  = "at_risk"
+project_scale   = "enterprise"
+project_type    = "technical"
+budget_total_usd = 2100000
+budget_spent_usd = 680000
+
+# Required compliance frameworks at enterprise scale
+compliance_frameworks = [
+    "SOC 2 Type II",
+    "ISO 27001",
+    "GDPR",
+]
+
+[[phases]]
+name           = "Phase 1: Discovery & Design"
+start_date     = "2025-06-01"
+end_date       = "2025-09-30"
+status         = "complete"
+completion_pct = 100
+
+[[phases]]
+name           = "Phase 2: Pilot Deployment"
+start_date     = "2025-10-01"
+end_date       = "2026-03-31"
+status         = "in_progress"
+completion_pct = 55
+
+[[phases]]
+name           = "Phase 3: Wave 1 Rollout (Finance & HR)"
+start_date     = "2026-04-01"
+end_date       = "2026-06-30"
+status         = "not_started"
+completion_pct = 0
+
+[[phases]]
+name           = "Phase 4: Wave 2 Rollout (Operations & Logistics)"
+start_date     = "2026-07-01"
+end_date       = "2026-09-30"
+status         = "not_started"
+completion_pct = 0
+
+[[phases]]
+name           = "Phase 5: Stabilization & Hypercare"
+start_date     = "2026-10-01"
+end_date       = "2026-12-31"
+status         = "not_started"
+completion_pct = 0
+
+# Phase 1 Milestones (complete)
+[[milestones]]
+id             = "MS-001"
+name           = "Business Requirements Document (BRD) Approved"
+owner          = "Katherine Reyes"
+due_date       = "2025-07-31"
+completed_date = "2025-07-28"
+status         = "complete"
+dependencies   = []
+
+[[milestones]]
+id             = "MS-002"
+name           = "ERP Vendor Selected — Contract Executed"
+owner          = "Alex Torres"
+due_date       = "2025-08-31"
+completed_date = "2025-08-29"
+status         = "complete"
+dependencies   = ["MS-001"]
+
+[[milestones]]
+id             = "MS-003"
+name           = "System Architecture and Integration Design Approved"
+owner          = "ERP Vendor — Lead Architect"
+due_date       = "2025-09-30"
+completed_date = "2025-09-30"
+status         = "complete"
+dependencies   = ["MS-002"]
+
+# Phase 2 Milestones (in progress)
+[[milestones]]
+id           = "MS-004"
+name         = "Pilot Environment Configured and Validated"
+owner        = "ERP Vendor — Implementation Lead"
+due_date     = "2025-11-30"
+completed_date = "2025-11-28"
+status       = "complete"
+dependencies = ["MS-003"]
+
+[[milestones]]
+id           = "MS-005"
+name         = "Data Migration — Pilot Dataset Loaded and Verified"
+owner        = "Data Migration Lead"
+due_date     = "2025-12-31"
+completed_date = "2026-01-12"
+status       = "complete"
+dependencies = ["MS-004"]
+
+[[milestones]]
+id           = "MS-006"
+name         = "Pilot User Training — Finance Team Complete"
+owner        = "Training Lead"
+due_date     = "2026-01-31"
+completed_date = "2026-01-30"
+status       = "complete"
+dependencies = ["MS-004"]
+
+[[milestones]]
+id           = "MS-007"
+name         = "Pilot Go-Live — Finance Module"
+owner        = "Alex Torres"
+due_date     = "2026-02-14"
+completed_date = "2026-02-14"
+status       = "complete"
+dependencies = ["MS-005", "MS-006"]
+
+[[milestones]]
+id           = "MS-008"
+name         = "Pilot Stabilization — 30-Day Hypercare Complete"
+owner        = "ERP Vendor — Support Lead"
+due_date     = "2026-03-16"
+status       = "in_progress"
+dependencies = ["MS-007"]
+
+[[milestones]]
+id           = "MS-009"
+name         = "Pilot Lessons Learned — Wave 1 Plan Adjusted"
+owner        = "Alex Torres"
+due_date     = "2026-03-31"
+status       = "not_started"
+dependencies = ["MS-008"]
+
+[[milestones]]
+id           = "MS-010"
+name         = "Phase 2 Gate Review — Go/No-Go for Wave 1"
+owner        = "Katherine Reyes"
+due_date     = "2026-03-31"
+status       = "not_started"
+dependencies = ["MS-009"]
+
+# Phase 3 Milestones (not started)
+[[milestones]]
+id           = "MS-011"
+name         = "Wave 1 Environments Provisioned (Finance & HR)"
+owner        = "ERP Vendor — Implementation Lead"
+due_date     = "2026-04-15"
+status       = "not_started"
+dependencies = ["MS-010"]
+
+[[milestones]]
+id           = "MS-012"
+name         = "Wave 1 Data Migration — Full Finance & HR Dataset"
+owner        = "Data Migration Lead"
+due_date     = "2026-05-15"
+status       = "not_started"
+dependencies = ["MS-011"]
+
+[[milestones]]
+id           = "MS-013"
+name         = "Wave 1 User Training Complete — All Finance & HR Staff"
+owner        = "Training Lead"
+due_date     = "2026-05-31"
+status       = "not_started"
+dependencies = ["MS-011"]
+
+[[milestones]]
+id           = "MS-014"
+name         = "Wave 1 Go-Live — Finance & HR"
+owner        = "Alex Torres"
+due_date     = "2026-06-15"
+status       = "not_started"
+dependencies = ["MS-012", "MS-013"]
+
+[[milestones]]
+id           = "MS-015"
+name         = "Phase 3 Gate Review — Go/No-Go for Wave 2"
+owner        = "Katherine Reyes"
+due_date     = "2026-06-30"
+status       = "not_started"
+dependencies = ["MS-014"]
+
+# Phase 4 Milestones (not started)
+[[milestones]]
+id           = "MS-016"
+name         = "Wave 2 Environments Provisioned (Operations & Logistics)"
+owner        = "ERP Vendor — Implementation Lead"
+due_date     = "2026-07-15"
+status       = "not_started"
+dependencies = ["MS-015"]
+
+[[milestones]]
+id           = "MS-017"
+name         = "Wave 2 Data Migration Complete"
+owner        = "Data Migration Lead"
+due_date     = "2026-08-15"
+status       = "not_started"
+dependencies = ["MS-016"]
+
+[[milestones]]
+id           = "MS-018"
+name         = "Wave 2 Go-Live — Operations & Logistics"
+owner        = "Alex Torres"
+due_date     = "2026-09-15"
+status       = "not_started"
+dependencies = ["MS-017"]
+
+[[milestones]]
+id           = "MS-019"
+name         = "Phase 4 Gate Review — Go/No-Go for Hypercare"
+owner        = "Katherine Reyes"
+due_date     = "2026-09-30"
+status       = "not_started"
+dependencies = ["MS-018"]
+
+# Phase 5 Milestones (not started)
+[[milestones]]
+id           = "MS-020"
+name         = "Hypercare Period Complete — All Modules Stable"
+owner        = "ERP Vendor — Support Lead"
+due_date     = "2026-11-30"
+status       = "not_started"
+dependencies = ["MS-019"]
+
+[[milestones]]
+id           = "MS-021"
+name         = "Legacy System Decommission Approved"
+owner        = "CTO"
+due_date     = "2026-12-15"
+status       = "not_started"
+dependencies = ["MS-020"]
+
+[[milestones]]
+id           = "MS-022"
+name         = "SOC 2 Type II Audit — ERP Scope Complete"
+owner        = "Alex Torres"
+due_date     = "2026-12-20"
+status       = "not_started"
+dependencies = ["MS-020"]
+
+[[milestones]]
+id           = "MS-023"
+name         = "Project Close — Executive Sign-Off"
+owner        = "Katherine Reyes"
+due_date     = "2026-12-31"
+status       = "not_started"
+dependencies = ["MS-021", "MS-022"]

@@ -1,0 +1,38 @@
+[[risks]]
+id                  = "RISK-001"
+title               = "Venue Not Available on Target Date"
+category            = "vendor"
+probability         = "medium"
+impact              = "high"
+status              = "open"
+owner               = "Alex Torres"
+identified_date     = "2026-02-10"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Identify two backup venues by Feb 19. Confirm primary venue booking with deposit before Feb 21."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-002"
+title               = "Low Attendance / Department Buy-In"
+category            = "org"
+probability         = "low"
+impact              = "medium"
+status              = "open"
+owner               = "Morgan Hayes"
+identified_date     = "2026-02-10"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Send personal calendar invites from VP. Include teaser agenda in save-the-date. Surface attendance numbers at MS-002."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-003"
+title               = "Budget Overrun on Catering"
+category            = "budget"
+probability         = "medium"
+impact              = "medium"
+status              = "open"
+owner               = "Alex Torres"
+identified_date     = "2026-02-10"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Cap catering quote at $1,800. If per-head cost exceeds cap, reduce menu tier or headcount estimate."
+escalation_required = false

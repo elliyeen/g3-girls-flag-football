@@ -1,0 +1,259 @@
+[[risks]]
+id                  = "RISK-001"
+title               = "DataBridge ISO 27001 Certification Expired"
+category            = "compliance"
+probability         = "high"
+impact              = "high"
+status              = "escalated"
+owner               = "Alex Torres"
+identified_date     = "2026-02-10"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "DataBridge to submit renewal by Feb 28. Prohibit Wave 1 data migration work until renewed certificate received. CISO approval required to proceed."
+escalation_required = true
+
+[[risks]]
+id                  = "RISK-002"
+title               = "Data Processing Agreements (DPAs) Incomplete — GDPR Exposure"
+category            = "compliance"
+probability         = "high"
+impact              = "high"
+status              = "open"
+owner               = "Legal Team"
+identified_date     = "2026-02-17"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Legal to chase 4 outstanding DPAs by Feb 24. No personal data may flow to vendors without executed DPA. Block affected vendor deliverables until resolved."
+escalation_required = true
+
+[[risks]]
+id                  = "RISK-003"
+title               = "Phase 2 Gate Delay — Wave 1 Start Pushed"
+category            = "schedule"
+probability         = "medium"
+impact              = "high"
+status              = "open"
+owner               = "Alex Torres"
+identified_date     = "2026-02-01"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Compress Wave 1 planning activities if Phase 2 gate slips more than 2 weeks. Pre-position Wave 1 resource bookings at OmniERP. Gate deadline: March 31."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-004"
+title               = "Budget Overrun — Phase 3 Scope Creep"
+category            = "budget"
+probability         = "medium"
+impact              = "high"
+status              = "open"
+owner               = "Alex Torres"
+identified_date     = "2026-01-15"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Freeze scope for Wave 1. Any change requests over $25K require CEO approval. Maintain $150K contingency reserve. Monthly EVM review with CFO."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-005"
+title               = "Low User Adoption — Finance Team Resistance"
+category            = "org"
+probability         = "medium"
+impact              = "high"
+status              = "mitigating"
+owner               = "Change Management Lead"
+identified_date     = "2025-12-01"
+last_reviewed       = "2026-02-10"
+mitigation_plan     = "OCM running weekly finance champion sessions. Super user program extended by 2 weeks. VP Finance personally leading adoption kickoff."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-006"
+title               = "PayLink API Integration Delayed — Payroll Go-Live at Risk"
+category            = "vendor"
+probability         = "medium"
+impact              = "high"
+status              = "open"
+owner               = "Alex Torres"
+identified_date     = "2026-02-01"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Test environment must be available by March 15 or manual payroll bridge activated for Wave 1 launch. Escalate to CTO if PayLink misses March 15."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-007"
+title               = "Legacy System Cannot Be Decommissioned — Parallel Run Extends"
+category            = "technical"
+probability         = "medium"
+impact              = "medium"
+status              = "open"
+owner               = "CTO"
+identified_date     = "2026-01-01"
+last_reviewed       = "2026-02-10"
+mitigation_plan     = "Define decommission criteria in Wave 2 design. Budget 3-month parallel run post Wave 2 go-live as contingency. Identify legacy system sunset owner."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-008"
+title               = "OmniERP Resource Unavailability for Wave 1"
+category            = "resource"
+probability         = "medium"
+impact              = "high"
+status              = "open"
+owner               = "Alex Torres"
+identified_date     = "2026-02-10"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Contractual SLA: 4 consultants reserved for April–June. Follow up confirmed for Feb 28. Escalate to Client Success Director if not confirmed."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-009"
+title               = "Penetration Test Findings Block Go-Live"
+category            = "technical"
+probability         = "low"
+impact              = "high"
+status              = "open"
+owner               = "CISO"
+identified_date     = "2026-01-15"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Pen test scoped for April. Critical findings must be remediated before Wave 1 go-live. 30-day buffer built into schedule. CISO is go-live gate approver."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-010"
+title               = "SOC 2 Observation Period Control Failures"
+category            = "compliance"
+probability         = "low"
+impact              = "high"
+status              = "open"
+owner               = "CISO"
+identified_date     = "2026-01-01"
+last_reviewed       = "2026-02-10"
+mitigation_plan     = "Continuous control monitoring in place. Monthly internal audit readout. Any control gap addressed within 5 business days per remediation SLA."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-011"
+title               = "WMS Integration Complexity — LogiTrack API Instability"
+category            = "technical"
+probability         = "medium"
+impact              = "medium"
+status              = "open"
+owner               = "IT Infrastructure Lead"
+identified_date     = "2026-02-10"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Integration design doc review by Feb 28. API stability testing in Wave 2 test environment. Fallback: manual reconciliation process for 30 days post go-live."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-012"
+title               = "Change Fatigue — Multiple System Transitions in Same Period"
+category            = "org"
+probability         = "medium"
+impact              = "medium"
+status              = "open"
+owner               = "Change Management Lead"
+identified_date     = "2025-11-01"
+last_reviewed       = "2026-02-10"
+mitigation_plan     = "OCM sequencing analysis delivered. No other major change initiatives during Wave 1. CEO communications scheduled for Q2 to re-energize."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-013"
+title               = "Data Quality Issues Discovered Mid-Migration"
+category            = "technical"
+probability         = "medium"
+impact              = "high"
+status              = "mitigating"
+owner               = "Data Governance Owner"
+identified_date     = "2025-12-01"
+last_reviewed       = "2026-02-10"
+mitigation_plan     = "Data quality dashboard live. 3,400 records cleaned in pilot. Wave 1 migration requires >99.5% accuracy gate before go-live sign-off."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-014"
+title               = "Network Bandwidth Insufficient for ERP Traffic"
+category            = "technical"
+probability         = "low"
+impact              = "high"
+status              = "mitigating"
+owner               = "IT Infrastructure Lead"
+identified_date     = "2025-10-01"
+last_reviewed       = "2026-02-10"
+mitigation_plan     = "Apex Telecom upgrade contracted; completion by March 31. Load test ERP production environment before Wave 1 go-live."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-015"
+title               = "Key Personnel Attrition — Data Migration Lead"
+category            = "resource"
+probability         = "low"
+impact              = "high"
+status              = "open"
+owner               = "VP People"
+identified_date     = "2026-01-15"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Shadow resource identified internally. DataBridge contractually required to provide replacement within 10 business days. Retention bonus approved by CFO."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-016"
+title               = "Regulatory Change Affects ERP Configuration"
+category            = "compliance"
+probability         = "low"
+impact              = "medium"
+status              = "open"
+owner               = "Legal Team"
+identified_date     = "2025-09-01"
+last_reviewed       = "2026-01-15"
+mitigation_plan     = "Legal monitoring regulatory landscape quarterly. OmniERP SLA includes mandatory config updates for compliance changes within 30 days of enactment."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-017"
+title               = "ERP Vendor Financial Instability"
+category            = "vendor"
+probability         = "low"
+impact              = "high"
+status              = "accepted"
+owner               = "CEO"
+identified_date     = "2025-08-01"
+last_reviewed       = "2026-01-01"
+mitigation_plan     = "OmniERP is publicly traded with 3 years of stable earnings. Escrow arrangement in contract for source code access. Annual financial review required."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-018"
+title               = "Training Completion Rates Below 90% Threshold"
+category            = "org"
+probability         = "medium"
+impact              = "medium"
+status              = "open"
+owner               = "Training Lead"
+identified_date     = "2026-01-01"
+last_reviewed       = "2026-02-10"
+mitigation_plan     = "Mandatory training policy issued by VP Finance and VP People. Completion tracked weekly. Managers accountable for team compliance."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-019"
+title               = "Disaster Recovery Environment Not Tested Before Go-Live"
+category            = "technical"
+probability         = "low"
+impact              = "high"
+status              = "open"
+owner               = "IT Infrastructure Lead"
+identified_date     = "2026-01-15"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "DR test scheduled for May 1 per SkyNet contract. Failover test must pass before Wave 1 go-live. CTO is gate approver for DR sign-off."
+escalation_required = false
+
+[[risks]]
+id                  = "RISK-020"
+title               = "Cross-Workstream Dependency Failures at Wave Cutover"
+category            = "schedule"
+probability         = "medium"
+impact              = "high"
+status              = "open"
+owner               = "Alex Torres"
+identified_date     = "2026-02-01"
+last_reviewed       = "2026-02-17"
+mitigation_plan     = "Dependency matrix reviewed in every bi-weekly program steering meeting. Cross-agent BLOCKER signals enabled. 2-week buffer at each phase gate."
+escalation_required = false

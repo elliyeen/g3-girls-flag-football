@@ -1,0 +1,448 @@
+[[vendors]]
+id     = "VEN-001"
+name   = "OmniERP Solutions"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Rachel Huang"
+email = "rhuang@omnierp.com"
+role  = "Client Success Director"
+
+[vendors.security_attestation]
+framework    = "SOC 2 Type II"
+issued_date  = "2025-04-01"
+expiry_date  = "2026-04-01"
+is_current   = true
+
+[[vendors.deliverables]]
+id          = "DEL-001"
+description = "Phase 2 Configuration and Pilot Environment Complete"
+due_date    = "2025-11-30"
+completed   = true
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-002"
+description = "Phase 2 Hypercare Support — 30 Days Post Go-Live"
+due_date    = "2026-03-16"
+completed   = false
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-003"
+description = "Wave 1 Configuration — Finance & HR Modules"
+due_date    = "2026-04-15"
+completed   = false
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-004"
+description = "Wave 2 Configuration — Operations & Logistics Modules"
+due_date    = "2026-07-15"
+completed   = false
+priority    = "high"
+
+[[vendors.deliverables]]
+id          = "DEL-005"
+description = "Phase 5 Hypercare Support — All Modules"
+due_date    = "2026-11-30"
+completed   = false
+priority    = "high"
+
+[[vendors.follow_ups]]
+id        = "FU-001"
+subject   = "Confirm Wave 1 resource allocation — 4 consultants needed April–June"
+due_date  = "2026-02-28"
+completed = false
+priority  = "critical"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-002"
+name   = "DataBridge Migration Services"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Leon Carter"
+email = "lcarter@databridge.io"
+role  = "Project Lead"
+
+[vendors.security_attestation]
+framework    = "ISO 27001"
+issued_date  = "2025-02-01"
+expiry_date  = "2026-02-01"
+is_current   = false   # EXPIRED — must be renewed before Wave 1 work begins
+
+[[vendors.deliverables]]
+id          = "DEL-006"
+description = "Pilot Dataset Migration — Finance Module"
+due_date    = "2025-12-31"
+completed   = true
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-007"
+description = "Wave 1 Full Migration — Finance & HR Dataset"
+due_date    = "2026-05-15"
+completed   = false
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-008"
+description = "Wave 2 Full Migration — Operations & Logistics Dataset"
+due_date    = "2026-08-15"
+completed   = false
+priority    = "high"
+
+[[vendors.follow_ups]]
+id        = "FU-002"
+subject   = "ISO 27001 certification renewal — expired Feb 1; required before Wave 1"
+due_date  = "2026-02-28"
+completed = false
+priority  = "critical"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-003"
+name   = "ClearPath Training Solutions"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Anita Flores"
+email = "aflores@clearpathtraining.com"
+role  = "Program Manager"
+
+[vendors.security_attestation]
+framework    = "SOC 2 Type I"
+issued_date  = "2025-09-01"
+expiry_date  = "2026-09-01"
+is_current   = true
+
+[[vendors.deliverables]]
+id          = "DEL-009"
+description = "Pilot Training — Finance Team (completed)"
+due_date    = "2026-01-31"
+completed   = true
+priority    = "high"
+
+[[vendors.deliverables]]
+id          = "DEL-010"
+description = "Wave 1 Training — All Finance & HR Staff"
+due_date    = "2026-05-31"
+completed   = false
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-011"
+description = "Wave 2 Training — Operations & Logistics Staff"
+due_date    = "2026-08-31"
+completed   = false
+priority    = "high"
+
+[[vendors.deliverables]]
+id          = "DEL-012"
+description = "Super User Certification — All Waves"
+due_date    = "2026-09-15"
+completed   = false
+priority    = "high"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-004"
+name   = "SkyNet Infrastructure Partners"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Tom Briggs"
+email = "tbriggs@skynetinfra.com"
+role  = "Solutions Architect"
+
+[vendors.security_attestation]
+framework    = "SOC 2 Type II"
+issued_date  = "2025-07-01"
+expiry_date  = "2026-07-01"
+is_current   = true
+
+[[vendors.deliverables]]
+id          = "DEL-013"
+description = "ERP Infrastructure Provisioned — Pilot Environment"
+due_date    = "2025-10-31"
+completed   = true
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-014"
+description = "Production Environment Provisioned and Hardened"
+due_date    = "2026-03-31"
+completed   = false
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-015"
+description = "Disaster Recovery Environment Validated"
+due_date    = "2026-05-01"
+completed   = false
+priority    = "high"
+
+[[vendors.follow_ups]]
+id        = "FU-003"
+subject   = "Penetration test scope confirmation for production environment"
+due_date  = "2026-02-28"
+completed = false
+priority  = "high"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-005"
+name   = "PayLink Payroll Systems (Integration Partner)"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Dana Wu"
+email = "dwu@paylink.com"
+role  = "API Integration Lead"
+
+[vendors.security_attestation]
+framework    = "SOC 2 Type II"
+issued_date  = "2025-10-01"
+expiry_date  = "2026-10-01"
+is_current   = true
+
+[[vendors.deliverables]]
+id          = "DEL-016"
+description = "Payroll Integration API — Test Environment Ready"
+due_date    = "2026-03-15"
+completed   = false
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-017"
+description = "Payroll Integration — Production Cutover"
+due_date    = "2026-06-01"
+completed   = false
+priority    = "critical"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-006"
+name   = "LogiTrack WMS (Integration Partner)"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Sam Okonkwo"
+email = "sokonkwo@logitrack.com"
+role  = "Integration Manager"
+
+[vendors.security_attestation]
+framework    = "SOC 2 Type II"
+issued_date  = "2025-08-01"
+expiry_date  = "2026-08-01"
+is_current   = true
+
+[[vendors.deliverables]]
+id          = "DEL-018"
+description = "WMS-ERP Integration API — Design Document Approved"
+due_date    = "2026-02-28"
+completed   = false
+priority    = "high"
+
+[[vendors.deliverables]]
+id          = "DEL-019"
+description = "WMS-ERP Integration — Test Complete"
+due_date    = "2026-07-31"
+completed   = false
+priority    = "critical"
+
+[[vendors.follow_ups]]
+id        = "FU-004"
+subject   = "Confirm integration design doc review timeline — needed for Wave 2 planning"
+due_date  = "2026-02-24"
+completed = false
+priority  = "high"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-007"
+name   = "SecureAudit Partners (SOC 2 Auditor)"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Claire Nguyen"
+email = "cnguyen@secureaudit.com"
+role  = "Audit Partner"
+
+[[vendors.deliverables]]
+id          = "DEL-020"
+description = "SOC 2 Type II Audit — Observation Period Begins"
+due_date    = "2026-01-01"
+completed   = true
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-021"
+description = "SOC 2 Type II Audit Report — Draft Issued"
+due_date    = "2026-11-30"
+completed   = false
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-022"
+description = "SOC 2 Type II Audit Report — Final"
+due_date    = "2026-12-20"
+completed   = false
+priority    = "critical"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-008"
+name   = "CyberShield Penetration Testing"
+status = "onboarding"
+
+[vendors.primary_contact]
+name  = "Rory McLean"
+email = "rmclean@cybershield.io"
+role  = "Lead Tester"
+
+[vendors.security_attestation]
+framework    = "CREST Certified"
+issued_date  = "2025-06-01"
+expiry_date  = "2026-06-01"
+is_current   = true
+
+[[vendors.deliverables]]
+id          = "DEL-023"
+description = "Production Environment Penetration Test Complete"
+due_date    = "2026-04-30"
+completed   = false
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-024"
+description = "Pen Test Final Report and Remediation Plan"
+due_date    = "2026-05-15"
+completed   = false
+priority    = "high"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-009"
+name   = "GDPR Compliance Consultants"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Elke Müller"
+email = "emuller@gdprconsult.eu"
+role  = "Data Protection Advisor"
+
+[[vendors.deliverables]]
+id          = "DEL-025"
+description = "GDPR Data Processing Impact Assessment (DPIA) — ERP Scope"
+due_date    = "2026-02-28"
+completed   = false
+priority    = "high"
+
+[[vendors.deliverables]]
+id          = "DEL-026"
+description = "GDPR Compliance Sign-Off for Wave 1 Go-Live"
+due_date    = "2026-06-01"
+completed   = false
+priority    = "critical"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-010"
+name   = "Apex Telecom (Network Upgrade)"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Frank Yamada"
+email = "fyamada@apextelecom.com"
+role  = "Account Manager"
+
+[vendors.security_attestation]
+framework    = "SOC 2 Type I"
+issued_date  = "2025-05-01"
+expiry_date  = "2026-05-01"
+is_current   = true
+
+[[vendors.deliverables]]
+id          = "DEL-027"
+description = "Network Capacity Upgrade for ERP Traffic — Complete"
+due_date    = "2026-03-31"
+completed   = false
+priority    = "high"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-011"
+name   = "Horizon Change Management Consulting"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Tamara Scott"
+email = "tscott@horizonocm.com"
+role  = "OCM Lead"
+
+[[vendors.deliverables]]
+id          = "DEL-028"
+description = "Change Readiness Assessment — Baseline"
+due_date    = "2025-10-31"
+completed   = true
+priority    = "high"
+
+[[vendors.deliverables]]
+id          = "DEL-029"
+description = "Wave 1 Adoption Metrics Report — 30 Days Post Go-Live"
+due_date    = "2026-07-15"
+completed   = false
+priority    = "high"
+
+[[vendors.deliverables]]
+id          = "DEL-030"
+description = "Wave 2 Adoption Metrics Report"
+due_date    = "2026-10-15"
+completed   = false
+priority    = "medium"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-012"
+name   = "LegalEdge Contract Management"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Oliver Grant"
+email = "ogrant@legaledge.com"
+role  = "Contract Counsel"
+
+[[vendors.deliverables]]
+id          = "DEL-031"
+description = "All Vendor MSAs Reviewed and Executed"
+due_date    = "2025-09-30"
+completed   = true
+priority    = "high"
+
+[[vendors.deliverables]]
+id          = "DEL-032"
+description = "Data Processing Agreements (DPAs) — All Vendors"
+due_date    = "2026-02-28"
+completed   = false
+priority    = "critical"
+
+[[vendors.follow_ups]]
+id        = "FU-005"
+subject   = "DPA status: 4 of 12 vendors still outstanding — follow up needed"
+due_date  = "2026-02-24"
+completed = false
+priority  = "critical"

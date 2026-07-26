@@ -1,0 +1,19 @@
+agent_name    = "Small Project Agent — Quarterly All-Hands"
+agent_version = "1.0.0"
+project_type  = "non_technical"
+description   = "Plan and execute the Q2 department all-hands event. Budget $3K, 6-week timeline, 2 vendors."
+
+tasks = [
+    "project_status_report",
+    "overdue_check",
+    "risk_summary",
+    "vendor_followup",
+    "stakeholder_brief_mgmt",
+    "sprint_standup",
+    "sprint_scope",
+]
+
+[overrides]
+risk_alert_threshold      = 4   # Flag medium-impact risks earlier for a small event
+milestone_at_risk_days    = 7   # Short runway — flag 7 days out instead of 14
+vendor_followup_warn_days = 2

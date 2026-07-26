@@ -1,0 +1,12 @@
+agent_name    = "Hello World Test Agent"
+agent_version = "1.0.0"
+project_type  = "non_technical"
+description   = "Minimal end-to-end validation: produce a welcome doc, checklist, and email template for a new hire."
+
+# Only the two tasks allowed at hello_world scale are activated
+tasks = [
+    "project_status_report",
+    "overdue_check",
+]
+
+# No overrides — use all defaults from config/settings.toml

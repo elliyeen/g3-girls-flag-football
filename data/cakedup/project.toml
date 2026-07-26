@@ -1,0 +1,171 @@
+[project]
+id             = "cakedup"
+name           = "Cake'd Up — Digital Transformation"
+description    = "Transform a small junior cake business from a Google Sheet into a free online presence with a responsive website, embedded order form, Google Sheet tracker, and a marketing plan to grow monthly revenue from $50 to $350."
+type           = "mixed"
+project_scale  = "small"
+overall_status = "in_progress"
+start_date     = "2026-02-19"
+target_end_date = "2026-04-30"
+current_phase  = 1
+last_updated   = "2026-02-19"
+
+[project.budget]
+currency          = "USD"
+total_budget      = 0.00
+monthly_tool_cost = 0.00
+notes             = "Free tools only — HTML/GitHub Pages, Google Forms, Google Sheets, Canva, Instagram, TikTok, Cash App. No paid subscriptions. Venmo removed by AT's decision."
+
+[project.revenue_goal]
+current_monthly      = 50.00
+target_monthly       = 350.00
+current_price_single = 3.00
+current_price_pair   = 5.00
+current_price_5pack  = 10.00
+current_price_bday_standard = 12.00
+current_price_bday_premium  = 15.00
+notes = "7x revenue growth target. 3-Pack ($7) removed. Menu: $3 / $5 / $10 / $12–$15. Flavors: Carrot Cake, Berry Explosion, Cookies & Cream, Texas Vanilla Bean. Growth path: pre-order system + social media + Birthday Pack upsell."
+
+[[project.phases]]
+id          = 1
+name        = "Digital Foundation"
+description = "Build the website, order form, Google Sheet tracker, and brand kit. All TPM deliverables complete. Pending AT actions: run sheet script, take cake photos, host the website, add Instagram handle."
+start_date  = "2026-02-19"
+end_date    = "2026-03-04"
+status      = "in_progress"
+tpm_work    = "complete"
+at_actions_remaining = ["run build_order_sheet.js in Google Sheets", "take 5+ cake photos", "host website (GitHub Pages)", "add Instagram handle to website", "execute Canva brand kit", "add Cash App handle to website"]
+
+[[project.phases]]
+id          = 2
+name        = "Launch & Market"
+description = "Host the website live. Set up Instagram and TikTok. Post first content. Announce to current customers. Get first 5 online orders."
+start_date  = "2026-03-05"
+end_date    = "2026-03-31"
+status      = "not_started"
+
+[[project.phases]]
+id          = 3
+name        = "Grow to $350"
+description = "Execute marketing plan, refine pricing, grow monthly revenue from ~$100 to $350 via Birthday Pack upsells, referrals, and social media consistency."
+start_date  = "2026-04-01"
+end_date    = "2026-04-30"
+status      = "not_started"
+
+# ── MILESTONES ──────────────────────────────────────────────────────────────
+
+[[project.milestones]]
+id          = "MS-001"
+name        = "Google Sheet tracker script delivered"
+description = "build_order_sheet.js delivered — auto-builds 3-tab tracker (Orders, Dashboard, Availability) with Tiffany Blue branding, dropdowns, conditional formatting, and revenue formulas. AT to run in Google Apps Script."
+phase       = 1
+category    = "build_out"
+status      = "in_progress"
+due_date    = "2026-02-24"
+owner       = "AT"
+tpm_status  = "delivered"
+at_action   = "Run build_order_sheet.js in Google Apps Script (Extensions → Apps Script)"
+
+[[project.milestones]]
+id          = "MS-002"
+name        = "Google Form order form live"
+description = "build_order_form.js delivered and run by AT. Form created with 4 sections, 8 questions, flavor choices (Carrot Cake, Berry Explosion, Cookies & Cream, Texas Vanilla Bean), progress bar. Form embedded live in website."
+phase       = 1
+category    = "build_out"
+status      = "complete"
+due_date    = "2026-02-26"
+completed_date = "2026-02-19"
+owner       = "AT"
+depends_on  = ["MS-001"]
+notes       = "Form URL: embedded via iframe in index.html. Payment: Cash App + cash only. Venmo removed."
+
+[[project.milestones]]
+id          = "MS-003"
+name        = "Canva brand kit created"
+description = "Full Canva design brief delivered (canva_design_brief.md) with exact specs for 7 designs: logo, website banner, menu graphic, 3 Instagram templates, Birthday Pack label. Tiffany Blue theme (#0ABAB5). AT to execute in Canva free tier."
+phase       = 1
+category    = "build_out"
+status      = "in_progress"
+due_date    = "2026-02-26"
+owner       = "AT"
+tpm_status  = "delivered"
+at_action   = "Follow canva_design_brief.md to create all 7 designs in Canva"
+
+[[project.milestones]]
+id          = "MS-004"
+name        = "Website live"
+description = "Full responsive HTML website built (index.html) — Tiffany Blue theme, sticky nav, hero, menu (4 items), flavor chips, 3-step how-it-works, embedded Google Form, contact, about, dark footer. Mobile-tested across all breakpoints. Pending: hosting + Instagram handle + Cash App handle + cake photos."
+phase       = 1
+category    = "go_live"
+status      = "in_progress"
+due_date    = "2026-03-04"
+owner       = "AT"
+depends_on  = ["MS-002", "MS-003"]
+tpm_status  = "built and tested"
+at_action   = "Host on GitHub Pages; add Instagram handle; add Cash App handle; add cake photos to /photos/ folder"
+
+[[project.milestones]]
+id          = "MS-005"
+name        = "Instagram account active"
+description = "Instagram account created with Tiffany Blue bio, logo profile photo, and first 3 posts. Link to website in bio. Social media launch kit delivered (social_media_launch_kit.md) with every caption, hashtag, and DM template written."
+phase       = 2
+category    = "go_live"
+status      = "not_started"
+due_date    = "2026-03-10"
+owner       = "AT"
+depends_on  = ["MS-003", "MS-004"]
+notes       = "TikTok postponed — Instagram first. Social media section removed from website until handle confirmed."
+
+[[project.milestones]]
+id          = "MS-006"
+name        = "Announcement to existing customers"
+description = "Personal DM sent to every past customer with new website link and order form. Template written and ready in social_media_launch_kit.md."
+phase       = 2
+category    = "go_live"
+status      = "not_started"
+due_date    = "2026-03-10"
+owner       = "AT"
+depends_on  = ["MS-004"]
+
+[[project.milestones]]
+id          = "MS-007"
+name        = "First 5 website orders received"
+description = "5 orders placed through the live Google Form. Validates end-to-end flow: form → Sheet → AT confirmation DM → Cash App payment → school pickup."
+phase       = 2
+category    = "stabilization"
+status      = "not_started"
+due_date    = "2026-03-31"
+owner       = "AT"
+depends_on  = ["MS-004", "MS-005"]
+
+[[project.milestones]]
+id          = "MS-008"
+name        = "Revenue reaches $100/month"
+description = "Monthly revenue hits $100. Baseline validated. Birthday Pack upsell strategy activates for Phase 3 growth push."
+phase       = 2
+category    = "stabilization"
+status      = "not_started"
+due_date    = "2026-03-31"
+owner       = "AT"
+
+[[project.milestones]]
+id          = "MS-009"
+name        = "Birthday Pack + full menu live"
+description = "Birthday Pack ($12–$15) and 5-Pack ($10) live on website, form, and social. DELIVERED EARLY — already live on website and embedded in Google Form as of Feb 19. Originally planned for Phase 3."
+phase       = 1
+category    = "build_out"
+status      = "complete"
+due_date    = "2026-02-19"
+completed_date = "2026-02-19"
+owner       = "AT"
+notes       = "Delivered in Phase 1 ahead of schedule. 3-Pack ($7) removed by AT decision."
+
+[[project.milestones]]
+id          = "MS-010"
+name        = "Revenue reaches $350/month"
+description = "Monthly revenue target achieved via Birthday Pack upsells, referral program, Instagram growth, and consistent pre-order volume."
+phase       = 3
+category    = "closeout"
+status      = "not_started"
+due_date    = "2026-04-30"
+owner       = "AT"

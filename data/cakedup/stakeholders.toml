@@ -1,0 +1,35 @@
+[[stakeholders]]
+id           = "STK-001"
+name         = "AT"
+role         = "Business Owner"
+tier         = "exec"
+influence    = "decision_maker"
+engagement   = 10
+notes        = "Runs Cake'd Up. Makes all decisions. Responsible for all deliverables. This is her business."
+
+[[stakeholders]]
+id           = "STK-002"
+name         = "TPM Agent"
+role         = "Project Manager"
+tier         = "mgmt"
+influence    = "advisor"
+engagement   = 10
+notes        = "Guides AT through every step. Produces all plans, guides, and reports."
+
+[[stakeholders]]
+id           = "STK-003"
+name         = "Current Customers"
+role         = "Existing Customer Base"
+tier         = "ops"
+influence    = "beneficiary"
+engagement   = 7
+notes        = "Current repeat buyers. First target for website announcement and custom cake upsell."
+
+[[stakeholders]]
+id           = "STK-004"
+name         = "New Customers"
+role         = "Target Market"
+tier         = "ops"
+influence    = "beneficiary"
+engagement   = 3
+notes        = "School peers, local community, social media followers. Primary growth target for Phase 2 and 3."

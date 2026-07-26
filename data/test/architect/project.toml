@@ -1,0 +1,100 @@
+id              = "small_project"
+name            = "Quarterly Department All-Hands Event"
+sponsor         = "Morgan Hayes, VP Operations"
+pm              = "Alex Torres"
+start_date      = "2026-02-10"
+target_end_date = "2026-03-24"
+current_phase   = "Planning"
+overall_status  = "on_track"
+project_scale   = "small"
+project_type    = "non_technical"
+budget_total_usd = 3000
+budget_spent_usd = 420
+
+# Single phase — small scale allows 1–2 phases
+[[phases]]
+name           = "Planning & Execution"
+start_date     = "2026-02-10"
+end_date       = "2026-03-24"
+status         = "in_progress"
+completion_pct = 18
+
+[[milestones]]
+id           = "MS-001"
+name         = "Confirm Venue and Date"
+owner        = "Alex Torres"
+due_date     = "2026-02-19"
+status       = "in_progress"
+dependencies = []
+
+[[milestones]]
+id           = "MS-002"
+name         = "Send Save-the-Date to Department"
+owner        = "Morgan Hayes"
+due_date     = "2026-02-21"
+status       = "not_started"
+dependencies = ["MS-001"]
+
+[[milestones]]
+id           = "MS-003"
+name         = "Finalize Agenda and Speakers"
+owner        = "Alex Torres"
+due_date     = "2026-02-28"
+status       = "not_started"
+dependencies = []
+
+[[milestones]]
+id           = "MS-004"
+name         = "Catering Order Confirmed"
+owner        = "Alex Torres"
+due_date     = "2026-03-07"
+status       = "not_started"
+dependencies = ["MS-001"]
+
+[[milestones]]
+id           = "MS-005"
+name         = "AV Equipment Setup Confirmed with Vendor"
+owner        = "Alex Torres"
+due_date     = "2026-03-10"
+status       = "not_started"
+dependencies = ["MS-001"]
+
+[[milestones]]
+id           = "MS-006"
+name         = "Slide Deck and Materials Final"
+owner        = "Morgan Hayes"
+due_date     = "2026-03-17"
+status       = "not_started"
+dependencies = ["MS-003"]
+
+[[milestones]]
+id           = "MS-007"
+name         = "Day-Of Run-Through Complete"
+owner        = "Alex Torres"
+due_date     = "2026-03-23"
+status       = "not_started"
+dependencies = ["MS-005", "MS-006"]
+
+[[milestones]]
+id           = "MS-008"
+name         = "Event Held — Post-Event Survey Distributed"
+owner        = "Morgan Hayes"
+due_date     = "2026-03-24"
+status       = "not_started"
+dependencies = ["MS-007"]
+
+[[milestones]]
+id           = "MS-009"
+name         = "Post-Event Summary Report Delivered"
+owner        = "Alex Torres"
+due_date     = "2026-03-28"
+status       = "not_started"
+dependencies = ["MS-008"]
+
+[[milestones]]
+id           = "MS-010"
+name         = "Budget Reconciliation Complete"
+owner        = "Alex Torres"
+due_date     = "2026-03-31"
+status       = "not_started"
+dependencies = ["MS-008"]

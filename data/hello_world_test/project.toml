@@ -1,0 +1,41 @@
+id            = "hello_world_test"
+name          = "Welcome Kit for New Hire"
+sponsor       = "Jordan Ellis, People Operations Manager"
+pm            = "Alex Torres"
+start_date    = "2026-02-16"
+target_end_date = "2026-02-20"
+current_phase = "Execution"
+overall_status = "completed"
+project_scale = "hello_world"
+project_type  = "non_technical"
+budget_total_usd = 0
+budget_spent_usd = 0
+
+# No phases section needed at hello_world scale
+
+[[milestones]]
+id           = "MS-001"
+name         = "Draft 1-Page Welcome Document"
+owner        = "Alex Torres"
+due_date     = "2026-02-17"
+completed_date = "2026-02-17"
+status       = "complete"
+dependencies = []
+
+[[milestones]]
+id             = "MS-002"
+name           = "Create New Hire Onboarding Checklist"
+owner          = "Jordan Ellis"
+due_date       = "2026-02-18"
+completed_date = "2026-02-19"
+status         = "complete"
+dependencies   = ["MS-001"]
+
+[[milestones]]
+id             = "MS-003"
+name           = "Write Welcome Email Template"
+owner          = "Alex Torres"
+due_date       = "2026-02-20"
+completed_date = "2026-02-19"
+status         = "complete"
+dependencies   = ["MS-001"]

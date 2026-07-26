@@ -1,0 +1,19 @@
+[[stakeholders]]
+id               = "STK-001"
+name             = "Jordan Ellis"
+title            = "People Operations Manager"
+email            = "jellis@client.com"
+role             = "sponsor"
+update_frequency = "on_completion"
+detail_level     = "management"
+focus_areas      = ["timeline", "deliverable_quality"]
+
+[[stakeholders]]
+id               = "STK-002"
+name             = "New Hire (placeholder)"
+title            = "Incoming Employee"
+email            = "newhire@client.com"
+role             = "recipient"
+update_frequency = "on_completion"
+detail_level     = "operational"
+focus_areas      = ["checklist", "welcome_document"]

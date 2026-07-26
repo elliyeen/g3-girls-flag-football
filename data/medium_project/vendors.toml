@@ -1,0 +1,174 @@
+[[vendors]]
+id     = "VEN-001"
+name   = "Apex General Contractors"
+status = "onboarding"
+
+[vendors.primary_contact]
+name  = "Ray Kowalski"
+email = "rkowalski@apexgc.com"
+role  = "Project Manager"
+
+[[vendors.deliverables]]
+id          = "DEL-001"
+description = "RFP Response — Scope of Work and Bid"
+due_date    = "2026-03-05"
+completed   = false
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-002"
+description = "Signed Contract and Construction Schedule"
+due_date    = "2026-03-10"
+completed   = false
+priority    = "critical"
+
+[[vendors.deliverables]]
+id          = "DEL-003"
+description = "Phase 3 Build-Out Complete and Punch List Resolved"
+due_date    = "2026-04-30"
+completed   = false
+priority    = "high"
+
+[[vendors.follow_ups]]
+id        = "FU-001"
+subject   = "Confirm availability for April–May build-out window"
+due_date  = "2026-02-27"
+completed = false
+priority  = "high"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-002"
+name   = "Meridian Office Furniture"
+status = "onboarding"
+
+[vendors.primary_contact]
+name  = "Camille Ortega"
+email = "cortega@meridianfurniture.com"
+role  = "Account Executive"
+
+[[vendors.deliverables]]
+id          = "DEL-004"
+description = "RFP Response — Furniture Quote"
+due_date    = "2026-03-05"
+completed   = false
+priority    = "high"
+
+[[vendors.deliverables]]
+id          = "DEL-005"
+description = "Signed PO and Delivery Schedule"
+due_date    = "2026-03-14"
+completed   = false
+priority    = "high"
+
+[[vendors.deliverables]]
+id          = "DEL-006"
+description = "Furniture Delivery and Installation Complete"
+due_date    = "2026-05-10"
+completed   = false
+priority    = "high"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-003"
+name   = "NetRun IT Services"
+status = "onboarding"
+
+[vendors.primary_contact]
+name  = "Jasper Tan"
+email = "jtan@netrunits.com"
+role  = "Solutions Engineer"
+
+[[vendors.deliverables]]
+id          = "DEL-007"
+description = "Network Cabling and Infrastructure Scope of Work"
+due_date    = "2026-03-05"
+completed   = false
+priority    = "high"
+
+[[vendors.deliverables]]
+id          = "DEL-008"
+description = "Cabling Installation Complete"
+due_date    = "2026-05-08"
+completed   = false
+priority    = "critical"
+
+[[vendors.follow_ups]]
+id        = "FU-002"
+subject   = "Confirm compatibility with existing VLAN and switching infrastructure"
+due_date  = "2026-02-20"
+completed = false
+priority  = "high"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-004"
+name   = "Swift Relocation Services"
+status = "onboarding"
+
+[vendors.primary_contact]
+name  = "Mike Dominguez"
+email = "mdominguez@swiftrelocation.com"
+role  = "Move Coordinator"
+
+[[vendors.deliverables]]
+id          = "DEL-009"
+description = "Move Plan and Crew Schedule"
+due_date    = "2026-05-01"
+completed   = false
+priority    = "high"
+
+[[vendors.deliverables]]
+id          = "DEL-010"
+description = "Move Day Execution Complete"
+due_date    = "2026-06-05"
+completed   = false
+priority    = "critical"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-005"
+name   = "City of [REDACTED] Permits Office"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Permit Desk"
+email = "permits@cityof.gov"
+role  = "Regulatory Contact"
+
+[[vendors.deliverables]]
+id          = "DEL-011"
+description = "Construction Permit Approved"
+due_date    = "2026-03-25"
+completed   = false
+priority    = "critical"
+
+[[vendors.follow_ups]]
+id        = "FU-003"
+subject   = "Confirm permit application submission checklist and timeline"
+due_date  = "2026-02-28"
+completed = false
+priority  = "high"
+
+# ------------------------------------------------------------------
+
+[[vendors]]
+id     = "VEN-006"
+name   = "ClearLease Legal Services"
+status = "active"
+
+[vendors.primary_contact]
+name  = "Diane Foster"
+email = "dfoster@clearlease.com"
+role  = "Real Estate Attorney"
+
+[[vendors.deliverables]]
+id          = "DEL-012"
+description = "Lease Amendment for New Floor — Executed"
+due_date    = "2026-03-15"
+completed   = false
+priority    = "high"
